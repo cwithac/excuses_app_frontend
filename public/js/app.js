@@ -4,7 +4,7 @@ var app = angular.module('excuses-app', []);
 
 app.controller('mainController', ['$http', '$scope', function($http, $scope){
   this.title = "Excuses, Excuses!"
-  
+
   // this is the url for our backend, inject scope to your controllers and
   // you should be able to use this variable anywhere
   $scope.baseUrl = 'https://perfect-excuse.herokuapp.com/'
@@ -12,7 +12,7 @@ app.controller('mainController', ['$http', '$scope', function($http, $scope){
   // this is a function that checks if a user is logged in, inject scope to your
   // controllers and you should be able to use this variable anywhere
   $scope.userIsLoggedIn = function() {
-    token = localStorage.getItem('token');
+    var token = localStorage.getItem('token');
     if(token !== 'undefined' && token !== undefined && token !== null) {
       console.log('The user is logged in.');
       return true;
