@@ -1,12 +1,20 @@
-* {
+/*FOR DEVELOPMENT ONLY*/
+
+/** {
 box-sizing: border-box;
 border: 1px dotted black;
-}
+}*/
+
+/*FOR DEVELOPMENT ONLY*/
+
+@import url('https://fonts.googleapis.com/css?family=Bangers');
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
   margin: 0;
   padding: 0;
-  /*background-color: coral;*/
+  font-family: 'Roboto', sans-serif;
 }
 
 nav {
@@ -14,9 +22,15 @@ nav {
   flex-flow: row nowrap;
   justify-content: space-around;
   align-content: center;
+  background-color: black;
+  color: white;
 }
 
 nav a {
+  color: white;
+  text-decoration: none;
+  padding-bottom: 5px;
+  font-family: 'Julius Sans One', sans-serif;
 }
 
 header {
@@ -25,11 +39,18 @@ header {
   justify-content: space-between;
   align-content: center;
   padding: 10px;
+  background-color: orange;
 }
 
 header h1 {
   width: 50%;
   text-align: center;
+  font-family: 'Bangers', cursive;
+  font-size: 80px;
+}
+
+h2 {
+  font-family: 'Julius Sans One', sans-serif;
 }
 
 .header-img {
@@ -40,7 +61,7 @@ header h1 {
 }
 
 .header-img img{
-  width: 100%;
+  width: 50%;
   display: block;
 }
 
@@ -50,15 +71,17 @@ header h1 {
 }
 
 .excuses {
-  width: 60%
+  width: 60%;
 }
 
 .occasions {
-  width: 40%;
+  width: 39%;
+  padding-left: 1%;
 }
 
 .occasion-tag {
   display: inline-block;
+  font-family: 'Julius Sans One', sans-serif;
 }
 
 @media (max-width: 600px) {
@@ -68,5 +91,9 @@ header h1 {
 
   .occasions {
     width: 100%;
+  }
+
+  header h1 {
+    font-size: 40px;
   }
 }
