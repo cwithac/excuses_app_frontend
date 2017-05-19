@@ -3,6 +3,7 @@ function($http, $scope) {
 
   this.excuses = [];
   this.formData = {};
+  this.occasion = []
 
   this.getExcuses = function() {
     $http({
@@ -14,13 +15,23 @@ function($http, $scope) {
     }.bind(this));
   };
 
-  this.createExcuse = function(id){
+  this.getOccasions = function() {
+    $http({
+      method: 'GET',
+      url: 'http://localhost:3000/occasions',
+    }).then(function(response){
+      console.log('all occasions', response);
+      this.occasion = response.data.occasions;
+    }.bind(this));
+  };
+
+  this.createExcuse = function(){
   $http({
     method: 'POST',
     url: 'http://localhost:3000/excuses',
     data: this.formData
   }).then(function(response){
-      console.log('new review', response);
+      console.log('New excuse: ', response);
       this.formData = {};
       this.getExcuses();
   }.bind(this));
@@ -38,5 +49,6 @@ function($http, $scope) {
   };
 
   this.getExcuses();
+  this.getOccasions();
 
 }]); //excusesController END
