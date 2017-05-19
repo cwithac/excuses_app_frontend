@@ -1,8 +1,13 @@
-<form ng-submit="loginCtrl.signUp(signUpData)">
+<form ng-submit="loginCtrl.signUp(signUpData)" class="modal">
+  <div class="close-btn">x</div>
   <fieldset>
     <legend>Create an account</legend>
+    <label for="username">username: </label>
     <input type="text" ng-model="signUpData.username" placeholder="username">
+    <label for="password">password: </label>
     <input type="password" ng-model="signUpData.password" placeholder="password">
+    <label for="password">confirm password: </label>
+    <input type="password" ng-model="signUpData.confirmPassword" placeholder="password">
     <input type="submit" class="submit">
   </fieldset>
 </form>

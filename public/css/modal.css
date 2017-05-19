@@ -1,0 +1,70 @@
+.modal {
+  width: 50%;
+  margin: auto;
+  background-color: rgba(255,255,255, .9);
+  padding: 2em;
+  border-radius: .2em;
+  position: fixed;
+  left: 25%;
+  top: 25%;
+}
+
+fieldset {
+  border: 1px dotted black;
+}
+
+legend {
+  background-color: black;
+  color: white;
+  /*text-align: center;*/
+  padding: .2em;
+}
+
+label {
+  width: 49%;
+  display: inline-block;
+  margin: auto;
+}
+
+input {
+  /*margin: auto;*/
+  width: 49%;
+  display: inline-block;
+  margin: 5px auto;
+}
+
+input[type='submit'] {
+  display: block;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+}
+
+input[type='submit']:hover {
+  background-color: transparent;
+  color: black;
+}
+
+.close-btn {
+  font-size: 1.5em;
+  padding: .25em .5em;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@media (max-width: 600px) {
+  .modal {
+    width: 90%;
+    left: 5%;
+  }
+
+  label {
+    width: 100%;
+
+  }
+
+  input {
+    width: 100%;
+  }
+}

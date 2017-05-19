@@ -1,5 +1,15 @@
 angular.module('excuses-app').controller('loginController', ['$http', '$scope',
 function($http, $scope) {
+  // jQuery logic
+
+  // hiding modal on click
+  $closeBtn = $('.close-btn');
+  $modal = $('.modal');
+  $closeModal = function() {
+    $modal.hide();
+  };
+  $closeBtn.on('click', $closeModal)
+
   // this function will make a login request when called
   this.login = function(loginData) {
     // http request
