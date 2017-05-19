@@ -1,7 +1,6 @@
 angular.module('excuses-app').controller('excusesController', ['$http', '$scope',
 function($http, $scope) {
 
-  this.test = "test"
   this.excuses = [];
 
     $http({
