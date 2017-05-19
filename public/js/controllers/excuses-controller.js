@@ -25,17 +25,42 @@ function($http, $scope) {
     }.bind(this));
   };
 
+  console.log(this.formData.occasion);
+
   this.createExcuse = function(){
   $http({
     method: 'POST',
     url: 'http://localhost:3000/excuses',
-    data: this.formData
+    data: {
+      excuse: {
+        content: this.formData.content,
+        count: this.formData.count,
+        occasion: this.formData.occasion
+      }
+    }
   }).then(function(response){
       console.log('New excuse: ', response);
       this.formData = {};
       this.getExcuses();
   }.bind(this));
+  console.log(this.formData);
+  console.log(this.formData.occasion);
 };
+
+  this.updateExcuse = function(excuse) {
+    $http({
+      method: 'PUT',
+      url: 'http://localhost:3000/excuses/' + excuse.id,
+      data: {
+        excuse: {
+          content: excuse.content
+        }
+      }
+    }).then(function(response){
+
+    }.bind(this));
+    console.log(excuse);
+  };
 
   this.deleteExcuse = function(id){
     $http({
