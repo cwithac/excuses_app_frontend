@@ -1,0 +1,38 @@
+.update-submit, .add-submit {
+  padding: 0;
+  width: 60px;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.update-submit:hover, .add-submit:hover {
+  color: limegreen;
+}
+
+.update-input {
+  width: 75%;
+}
+
+button {
+  margin-left: 5px;
+}
+
+#add-edit {
+  display: flex;
+  justify-content: space-around;
+}
+
+h6:hover {
+  color: limegreen;
+}
+
+.glyphicon:hover {
+  color: limegreen;
+}
+
+#occasionTag {
+  font-family: 'Bangers', cursive;
+}
+
+#create-excuse {
+  margin-left: 30px;
+}

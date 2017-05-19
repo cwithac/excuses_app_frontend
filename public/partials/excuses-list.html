@@ -1,18 +1,31 @@
-  <ul ng-repeat="excuse in excuseCtrl.excuses | orderBy : 'occasion.title'">
-      <li>{{excuse.excuse.content}} -- <span id="excuseCount">{{excuse.excuse.count}}</span> <span id="occasionTag">{{excuse.occasion.title}}</span><button ng-click="excuseCtrl.deleteExcuse(excuse.id)" type="submit">x</button></li>
+<!-- ADD EDIT -->
+<div id="add-edit">
+  <h6><i class="fa fa-plus" aria-hidden="true"></i>Add an Excuse</h6>
+  <h6><i class="fa fa-pencil" aria-hidden="true"></i>Edit an Excuse</h6>
+</div>
 
-      <form ng-submit="excuseCtrl.updateExcuse(excuse.excuse)">
-        <input type="text" ng-model="excuse.excuse.content">
-        <input type="submit" value="SUBMIT">
-      </form>
+<ul class="fa-ul" ng-repeat="excuse in excuseCtrl.excuses | orderBy : 'occasion.title'">
+    <!-- SHOW -->
+    <li><span id="excuseCount" class="glyphicon glyphicon-arrow-up">{{excuse.excuse.count}}</span></br><span id="occasionTag">{{excuse.occasion.title}}</span></br>{{excuse.excuse.content}}</br>
+      <div id="edit-delete">
+        <!-- EDIT FORM -->
+        <form ng-submit="excuseCtrl.updateExcuse(excuse.excuse)">
+          <input type="text" ng-model="excuse.excuse.content" class="update-input">
+          <input type="submit" value="Update" class="update-submit">
+        </form>
+        <!-- DELETE BUTTON -->
+        <div ng-click="excuseCtrl.deleteExcuse(excuse.id)" type="submit" ><span class="glyphicon glyphicon-trash"></span></div></li>
+      </div>
+</ul>
 
-  </ul>
-
+<!-- CREATE FORM -->
+<div id="create-excuse">
   <form ng-submit="excuseCtrl.createExcuse()">
     <input type="text" ng-model="excuseCtrl.formData.content" placeholder="content">
     <input type="text" ng-model="excuseCtrl.formData.count" placeholder="times used">
     <select ng-model="excuseCtrl.formData.occasion">
       <option ng-repeat="occasion in excuseCtrl.occasion"  value="{{occasion.title}}">{{occasion.title}}</option>
     </select>
-    <input type="submit" value="SUBMIT">
+    <input type="submit" class="add-submit" value="Add">
   </form>
+</div>

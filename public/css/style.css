@@ -25,13 +25,19 @@ nav {
   align-content: center;
   background-color: black;
   color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  padding-bottom: 5px;
   font-family: 'Julius Sans One', sans-serif;
+}
+
+nav a:hover {
+  color: limegreen;
+  text-decoration: none;
 }
 
 header {
@@ -40,18 +46,28 @@ header {
   justify-content: space-between;
   align-content: center;
   padding: 10px;
-  background-color: orange;
+  background-color: limegreen;
 }
 
 header h1 {
   width: 50%;
   text-align: center;
   font-family: 'Bangers', cursive;
-  font-size: 80px;
+  font-size: 60px;
+  margin-top: 25px;
+  position: sticky;
 }
 
 h2 {
   font-family: 'Julius Sans One', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding-left: 0;
 }
 
 .header-img {
@@ -62,7 +78,7 @@ h2 {
 }
 
 .header-img img{
-  width: 50%;
+  height: 150px;
   display: block;
 }
 
