@@ -2,6 +2,7 @@ angular.module('excuses-app').controller('excusesController', ['$http', '$scope'
 function($http, $scope) {
 
   this.excuses = [];
+  this.formData = {};
 
   this.getExcuses = function() {
     $http({
@@ -12,6 +13,18 @@ function($http, $scope) {
       this.excuses = response.data;
     }.bind(this));
   };
+
+  this.createExcuse = function(id){
+  $http({
+    method: 'POST',
+    url: 'http://localhost:3000/excuses',
+    data: this.formData
+  }).then(function(response){
+      console.log('new review', response);
+      this.formData = {};
+      this.getExcuses();
+  }.bind(this));
+};
 
   this.deleteExcuse = function(id){
     $http({
@@ -26,4 +39,4 @@ function($http, $scope) {
 
   this.getExcuses();
 
-}]);
+}]); //excusesController END
