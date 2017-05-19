@@ -1,10 +1,10 @@
 angular.module('excuses-app').controller('loginController', ['$http', '$scope',
 function($http, $scope) {
-  // jQuery logic
+  // ******************************* jQuery ***********************************
 
-  // hiding modal on click
+  // --------------------- hiding / showing modal on click ---------------------
 
-  //elements
+  // --- elements ---
   $signUpLink = $('#sign-up-link')
   $logInLink = $('#log-in-link');
   $signUpModal = $('#sign-up-modal')
@@ -12,28 +12,34 @@ function($http, $scope) {
   $modal = $('.modal');
   $closeBtn = $('.close-btn');
 
-  //actions
+  // --- actions ---
+  // modals hidden by default
   $modal.hide();
 
+  // function for opening sing up modal
   $openSignUpModal = function() {
     $modal.hide();
     $signUpModal.show();
   };
 
+  // function for opening log in modal
   $openlogInModal = function() {
     $modal.hide();
     $logInModal.show();
   };
 
+  // function for closing all modals
   $closeModal = function() {
     $modal.hide();
   };
 
-  //event Listeners
+  //--- event Listeners ---
   $signUpLink.on('click', $openSignUpModal)
   $logInLink.on('click', $openlogInModal)
-
   $closeBtn.on('click', $closeModal)
+
+
+  // ******************************* Angular ***********************************
 
   // this function will make a login request when called
   this.login = function(loginData) {
@@ -60,22 +66,31 @@ function($http, $scope) {
 
   // this function will make a sign up request when called
   this.signUp = function(signUpData) {
-    $http({
-      method: 'POST',
-      url: /*$scope.baseUrl*/ 'http://localhost:3000/' + 'users',
-      data: {
-        user: {
-          username: signUpData.username,
-          password: signUpData.password
+    signUpData.message = '';
+    if (signUpData.password === signUpData.confirmPassword) {
+      $http({
+        method: 'POST',
+        url: /*$scope.baseUrl*/ 'http://localhost:3000/' + 'users',
+        data: {
+          user: {
+            username: signUpData.username,
+            password: signUpData.password
+          }
         }
-      }
-    }).then(
-      function(response) {
-        console.log(response.data)
-      }.bind(this),
-      function(error) {
-        console.log(error);
-      });
+      }).then(
+        function(response) {
+          console.log(response.data)
+          signUpData.username = '';
+          signUpData.password = '';
+          signUpData.confirmPassword = '';
+          signUpData.message = 'Thank you, ' + response.data.user.username + '! Your profile was created. Please log in to continue.';
+        }.bind(this),
+        function(error) {
+          console.log(error);
+        });
+    } else {
+      signUpData.message = 'Sorry, the passwords you entered did not match.';
+    }
   };
 
   // this function will delete the webtoken from local storage

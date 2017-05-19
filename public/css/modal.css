@@ -26,8 +26,7 @@
   margin: auto;
 }
 
-input {
-  /*margin: auto;*/
+.modal input {
   width: 49%;
   display: inline-block;
   margin: 5px auto;
@@ -51,6 +50,10 @@ input {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.modal p {
+  text-align: center;
 }
 
 @media (max-width: 600px) {
