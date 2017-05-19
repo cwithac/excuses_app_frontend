@@ -55,12 +55,19 @@ function($http, $scope) {
       }
     }).then(
       function(response) {
+        console.log('***** in response ');
         console.log(response.data);
-        // saves webtoken to local storage
-        localStorage.setItem('token', JSON.stringify(response.data.token));
+        if (response.data.status === 200) {
+          // saves webtoken to local storage
+          localStorage.setItem('token', JSON.stringify(response.data.token));
+        } else {
+          loginData.message = 'Sorry, the username and password you provided don\'t match our records.';
+        }
       }.bind(this),
       function(error) {
+        console.log('***** in error ');
         console.log(error);
+        loginData.message = 'Sorry, something went wrong. Please try again later.';
       });
   };
 
@@ -87,6 +94,7 @@ function($http, $scope) {
         }.bind(this),
         function(error) {
           console.log(error);
+          signUpData.message = 'Sorry, something went wrong. Please try again later.';
         });
     } else {
       signUpData.message = 'Sorry, the passwords you entered did not match.';

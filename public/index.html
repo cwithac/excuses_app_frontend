@@ -30,8 +30,8 @@
   </head>
   <body ng-controller="mainController as ctrl">
     <nav>
-      <a href="#" id="sign-up-link">Sign Up</a>
-      <a href="#" id="log-in-link">Log in</a>
+      <a href="#" id="sign-up-link" ng-hide="userIsLoggedIn()">Sign Up</a>
+      <a href="#" id="log-in-link" ng-hide="userIsLoggedIn()">Log in</a>
       <logout-form ng-show="userIsLoggedIn()"></logout-form>
     </nav>
     <header>
