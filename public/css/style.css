@@ -7,6 +7,7 @@ border: 1px dotted black;
 
 /*FOR DEVELOPMENT ONLY*/
 
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 @import url('https://fonts.googleapis.com/css?family=Bangers');
 @import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
