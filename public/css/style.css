@@ -1,3 +1,72 @@
+* {
+box-sizing: border-box;
+border: 1px dotted black;
+}
+
 body {
+  margin: 0;
+  padding: 0;
   background-color: coral;
+}
+
+nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-content: center;
+}
+
+nav a {
+}
+
+header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-content: center;
+  padding: 10px;
+}
+
+header h1 {
+  width: 50%;
+  text-align: center;
+}
+
+.header-img {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-img img{
+  width: 100%;
+  display: block;
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.excuses {
+  width: 60%
+}
+
+.occasions {
+  width: 40%;
+}
+
+.occasion-tag {
+  display: inline-block;
+}
+
+@media (max-width: 600px) {
+  .excuses {
+    width: 100%
+  }
+
+  .occasions {
+    width: 100%;
+  }
 }
