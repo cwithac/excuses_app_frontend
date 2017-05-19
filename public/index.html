@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html ng-app="excuses-app">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Excuses</title>
     <!-- SCRIPTS -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Angularjs -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <!-- main app js -->
     <script src="js/app.js"></script>
     <!-- login/logout directives and controller -->
     <script src="js/directives/login-form.js" charset="utf-8"></script>
@@ -12,15 +17,45 @@
     <script src="js/directives/sign-up-form.js" charset="utf-8"></script>
     <script src="js/controllers/login-controller.js" charset="utf-8"></script>
     <!-- CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <body>
-    <main ng-controller="mainController as ctrl">
+  <body ng-controller="mainController as ctrl">
+    <nav>
+      <a href="#">Sign Up</a>
+      <a href="#">Log in</a>
+      <a href="#">Log Out</a>
+    </nav>
+    <header>
+      <div class="header-img">
+        <img src="" alt="IMAGE GOES HERE">
+      </div>
       <h1>{{ctrl.title}}</h1>
+    </header>
+    <div class="container">
+      <section class="occasions">
+        <aside>
+          <h2 class="occasion-tag">occasion</h2>
+        </aside>
+        <aside>
+          <h2>Hello [user]</h2>
+          <ul>
+            <li>view all my excuses</li>
+            <li>edit my profile</li>
+          </ul>
+        </aside>
+      </section>
+      <section class="excuses">
+        <article>
+          <h3>Excuse content</h3>
+        </article>
+      </section>
+    </div>
+    <!-- these will be modals, ignore for now :) -->
+    <section class=modals>
       <sign-up-form ng-hide="userIsLoggedIn()"></sign-up-form>
       <login-form ng-hide="userIsLoggedIn()"></login-form>
       <logout-form ng-show="userIsLoggedIn()"></logout-form>
-    </main>
+    </section>
   </body>
 </html>

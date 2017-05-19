@@ -15,4 +15,9 @@ app.controller('mainController', ['$http', '$scope', function($http, $scope){
       return false;
     }
   };
+
+  $scope.test = function() {
+    console.log('THIS WORKS!');
+  };
+
 }]); // mainController END
