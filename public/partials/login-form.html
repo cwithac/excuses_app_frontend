@@ -1,5 +1,8 @@
 <form ng-submit="loginCtrl.login(loginData)">
-  <input type="text" ng-model="loginData.username" placeholder="username">
-  <input type="password" ng-model="loginData.password" placeholder="password">
-  <input type="submit" class="submit">
+  <fieldset>
+    <legend>Log in</legend>
+    <input type="text" ng-model="loginData.username" placeholder="username">
+    <input type="password" ng-model="loginData.password" placeholder="password">
+    <input type="submit" class="submit">
+  </fieldset>
 </form>

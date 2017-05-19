@@ -6,9 +6,6 @@ app.controller('mainController', ['$http', '$scope', function($http, $scope){
 
   this.title = "Excuses, Excuses!"
 
-  // this.hasCurrentUser = false;
-
-
   $scope.userIsLoggedIn = function() {
     if(localStorage.getItem('token')) {
       console.log('The user is logged in.');
