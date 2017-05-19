@@ -3,7 +3,7 @@ function($http, $scope) {
   this.occasions = [];
   $http({
     method: 'GET',
-    url: 'http://localhost:3000/occasions',
+    url: $scope.baseUrl + 'occasions',
   }).then(function(response) {
     console.log(response);
     this.occasions = response.data.occasions;

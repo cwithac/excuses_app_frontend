@@ -40,7 +40,7 @@ function($http, $scope) {
     // http request
     $http({
       method: 'POST',
-      url: /*$scope.baseUrl*/ 'http://localhost:3000/' + 'users/login',
+      url: $scope.baseUrl + 'users/login',
       data: {
         user: {
           username: loginData.username,
@@ -62,7 +62,7 @@ function($http, $scope) {
   this.signUp = function(signUpData) {
     $http({
       method: 'POST',
-      url: /*$scope.baseUrl*/ 'http://localhost:3000/' + 'users',
+      url: $scope.baseUrl + 'users',
       data: {
         user: {
           username: signUpData.username,

@@ -8,7 +8,7 @@ function($http, $scope) {
   this.getExcuses = function() {
     $http({
       method: 'GET',
-      url: 'http://localhost:3000/relations',
+      url: $scope.baseUrl + 'relations',
     }).then(function(response){
       console.log('all relations', response);
       this.excuses = response.data;
@@ -18,7 +18,7 @@ function($http, $scope) {
   this.getOccasions = function() {
     $http({
       method: 'GET',
-      url: 'http://localhost:3000/occasions',
+      url: $scope.baseUrl + 'occasions',
     }).then(function(response){
       console.log('all occasions', response);
       this.occasion = response.data.occasions;
@@ -30,7 +30,7 @@ function($http, $scope) {
   this.createExcuse = function(){
   $http({
     method: 'POST',
-    url: 'http://localhost:3000/excuses',
+    url: $scope.baseUrl + 'excuses',
     data: {
       excuse: {
         content: this.formData.content,
@@ -50,7 +50,7 @@ function($http, $scope) {
   this.updateExcuse = function(excuse) {
     $http({
       method: 'PUT',
-      url: 'http://localhost:3000/excuses/' + excuse.id,
+      url: $scope.baseUrl + 'excuses/' + excuse.id,
       data: {
         excuse: {
           content: excuse.content
@@ -65,7 +65,7 @@ function($http, $scope) {
   this.deleteExcuse = function(id){
     $http({
      method: 'DELETE',
-     url: 'http://localhost:3000/relations/'+ id,
+     url: $scope.baseUrl + 'relations/'+ id,
     }).then(function(response){
      console.log("Deleted: ", response);
      this.getExcuses();
