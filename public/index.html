@@ -25,12 +25,14 @@
     <!-- CSS -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- styles for modals -->
+    <link rel="stylesheet" href="css/modal.css">
   </head>
   <body ng-controller="mainController as ctrl">
     <nav>
-      <a href="#">Sign Up</a>
-      <a href="#">Log in</a>
-      <a href="#">Log Out</a>
+      <a href="#" id="sign-up-link">Sign Up</a>
+      <a href="#" id="log-in-link">Log in</a>
+      <logout-form ng-show="userIsLoggedIn()"></logout-form>
     </nav>
     <header>
       <div class="header-img">
@@ -58,7 +60,6 @@
     <section class=modals>
       <sign-up-form ng-hide="userIsLoggedIn()"></sign-up-form>
       <login-form ng-hide="userIsLoggedIn()"></login-form>
-      <logout-form ng-show="userIsLoggedIn()"></logout-form>
     </section>
   </body>
 </html>

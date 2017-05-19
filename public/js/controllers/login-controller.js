@@ -1,12 +1,46 @@
 angular.module('excuses-app').controller('loginController', ['$http', '$scope',
 function($http, $scope) {
+  // jQuery logic
+
+  // hiding modal on click
+
+  //elements
+  $signUpLink = $('#sign-up-link')
+  $logInLink = $('#log-in-link');
+  $signUpModal = $('#sign-up-modal')
+  $logInModal = $('#login-modal');
+  $modal = $('.modal');
+  $closeBtn = $('.close-btn');
+
+  //actions
+  $modal.hide();
+
+  $openSignUpModal = function() {
+    $modal.hide();
+    $signUpModal.show();
+  };
+
+  $openlogInModal = function() {
+    $modal.hide();
+    $logInModal.show();
+  };
+
+  $closeModal = function() {
+    $modal.hide();
+  };
+
+  //event Listeners
+  $signUpLink.on('click', $openSignUpModal)
+  $logInLink.on('click', $openlogInModal)
+
+  $closeBtn.on('click', $closeModal)
+
   // this function will make a login request when called
   this.login = function(loginData) {
-    console.log(loginData);
     // http request
     $http({
       method: 'POST',
-      url: $scope.baseUrl + 'users/login',
+      url: /*$scope.baseUrl*/ 'http://localhost:3000/' + 'users/login',
       data: {
         user: {
           username: loginData.username,
@@ -28,7 +62,7 @@ function($http, $scope) {
   this.signUp = function(signUpData) {
     $http({
       method: 'POST',
-      url: $scope.baseUrl + 'users',
+      url: /*$scope.baseUrl*/ 'http://localhost:3000/' + 'users',
       data: {
         user: {
           username: signUpData.username,
