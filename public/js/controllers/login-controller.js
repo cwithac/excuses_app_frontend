@@ -32,7 +32,7 @@ function($http, $scope) {
       data: {
         user: {
           username: signUpData.username,
-          password_digest: signUpData.password
+          password: signUpData.password
         }
       }
     }).then(
