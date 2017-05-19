@@ -1,3 +1,4 @@
   <ul ng-repeat="excuse in excuseCtrl.excuses | orderBy : 'occasion.title'">
-      <li>{{excuse.excuse.content}} <small>-- {{excuse.occasion.title}}</small></li>
+      <li>{{excuse.excuse.content}} <span id="occasionTag">{{excuse.occasion.title}}</span><button ng-click="excuseCtrl.deleteExcuse(excuse.id)" type="submit">x</button></li>
+
   </ul>
