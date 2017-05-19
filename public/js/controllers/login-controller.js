@@ -2,11 +2,10 @@ angular.module('excuses-app').controller('loginController', ['$http', '$scope',
 function($http, $scope) {
   // this function will make a login request when called
   this.login = function(loginData) {
-    console.log(loginData);
     // http request
     $http({
       method: 'POST',
-      url: $scope.baseUrl + 'users/login',
+      url: /*$scope.baseUrl*/ 'http://localhost:3000/' + 'users/login',
       data: {
         user: {
           username: loginData.username,
@@ -28,7 +27,7 @@ function($http, $scope) {
   this.signUp = function(signUpData) {
     $http({
       method: 'POST',
-      url: $scope.baseUrl + 'users',
+      url: /*$scope.baseUrl*/ 'http://localhost:3000/' + 'users',
       data: {
         user: {
           username: signUpData.username,
