@@ -3,11 +3,36 @@ function($http, $scope) {
   // jQuery logic
 
   // hiding modal on click
-  $closeBtn = $('.close-btn');
+
+  //elements
+  $signUpLink = $('#sign-up-link')
+  $logInLink = $('#log-in-link');
+  $signUpModal = $('#sign-up-modal')
+  $logInModal = $('#login-modal');
   $modal = $('.modal');
+  $closeBtn = $('.close-btn');
+
+  //actions
+  $modal.hide();
+
+  $openSignUpModal = function() {
+    $modal.hide();
+    $signUpModal.show();
+  };
+
+  $openlogInModal = function() {
+    $modal.hide();
+    $logInModal.show();
+  };
+
   $closeModal = function() {
     $modal.hide();
   };
+
+  //event Listeners
+  $signUpLink.on('click', $openSignUpModal)
+  $logInLink.on('click', $openlogInModal)
+
   $closeBtn.on('click', $closeModal)
 
   // this function will make a login request when called

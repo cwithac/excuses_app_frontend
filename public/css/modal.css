@@ -9,18 +9,18 @@
   top: 25%;
 }
 
-fieldset {
+.modal fieldset {
   border: 1px dotted black;
 }
 
-legend {
+.modal legend {
   background-color: black;
   color: white;
   /*text-align: center;*/
   padding: .2em;
 }
 
-label {
+.modal label {
   width: 49%;
   display: inline-block;
   margin: auto;
@@ -33,19 +33,19 @@ input {
   margin: 5px auto;
 }
 
-input[type='submit'] {
+.modal input[type='submit'] {
   display: block;
   background-color: black;
   color: white;
   border: 1px solid black;
 }
 
-input[type='submit']:hover {
+.modal input[type='submit']:hover {
   background-color: transparent;
   color: black;
 }
 
-.close-btn {
+.modal .close-btn {
   font-size: 1.5em;
   padding: .25em .5em;
   position: absolute;
@@ -59,12 +59,12 @@ input[type='submit']:hover {
     left: 5%;
   }
 
-  label {
+  .modal label {
     width: 100%;
 
   }
 
-  input {
+  .modal input {
     width: 100%;
   }
 }
