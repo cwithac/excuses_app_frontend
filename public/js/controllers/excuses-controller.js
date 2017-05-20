@@ -72,6 +72,7 @@ function($http, $scope) {
     }).then(function(response){
      console.log("Deleted: ", response);
      this.getExcuses();
+     this.editForm = false;
     }.bind(this));
 
   };
