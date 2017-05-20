@@ -23,7 +23,7 @@
 <ul ng-repeat="excuse in excuseCtrl.excuses | orderBy : 'occasion.title'">
     <!-- SHOW -->
     <li>
-      <span id="excuseCount"><i class="fa fa-plus" aria-hidden="true"></i>{{excuse.excuse.count}}</span></br>{{excuse.excuse.content}}</br><span id="occasionTag">{{excuse.occasion.title}}</span></br>
+      <span id="excuseCount"><i class="fa fa-plus" aria-hidden="true" ng-click="excuseCtrl.increaseCount(excuse)"></i>{{excuse.excuse.count}}</span></br>{{excuse.excuse.content}}</br><span id="occasionTag">{{excuse.occasion.title}}</span></br>
 
       <!-- EDIT OPEN BUTTON -->
       <i ng-click="excuseCtrl.showEditForm(excuse)" class="fa fa-pencil" aria-hidden="true"></i>

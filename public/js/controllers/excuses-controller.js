@@ -6,7 +6,7 @@ function($http, $scope) {
   this.occasion = [];
   this.addForm = false;
   this.editForm = false;
-  this.initialCount = 1;
+  this.initialCount = 0;
   this.alert = '';
 
   this.getExcuses = function() {
@@ -92,6 +92,23 @@ function($http, $scope) {
      this.getExcuses();
     }.bind(this));
 
+  };
+
+  this.increaseCount = function(excuse) {
+    excuse.excuse.count ++;
+    console.log(excuse.excuse.count);
+    console.log('excuse', excuse);
+    $http({
+      method: 'PATCH',
+      url: 'http://localhost:3000/excuses/' + excuse.excuse_id,
+      data: {
+        excuse: {
+          count: excuse.excuse.count
+        }
+      }
+    }).then(function(response){
+      console.log(response.data);
+    }.bind(this));
   };
 
   this.showAddForm = function() {
