@@ -1,7 +1,7 @@
 <!-- ADD EDIT -->
 <div id="add-edit">
   <h6 ng-click="excuseCtrl.showAddForm()"><i class="fa fa-plus-square" aria-hidden="true"></i> Add an Excuse</h6>
-  <h6 ng-click="excuseCtrl.showEditForm()"><i class="fa fa-pencil" aria-hidden="true"></i> Edit an Excuse</h6>
+  <!-- <h6 ng-click="excuseCtrl.showEditForm()"><i class="fa fa-pencil" aria-hidden="true"></i> Edit an Excuse</h6> -->
 </div>
 
 <h2 class="occasion-tag">excuses</h2>
@@ -24,15 +24,20 @@
 <ul ng-repeat="excuse in excuseCtrl.excuses | orderBy : 'occasion.title'">
     <!-- SHOW -->
     <li>
-      <span id="excuseCount"><i class="fa fa-plus" aria-hidden="true"></i>{{excuse.excuse.count}}</span></br><span id="occasionTag">{{excuse.occasion.title}}</span></br>{{excuse.excuse.content}}</br>
+      <span id="excuseCount"><i class="fa fa-plus" aria-hidden="true"></i>{{excuse.excuse.count}}</span></br><span id="occasionTag">{{excuse.occasion.title}}</span></br>{{excuse.excuse.content}}
+
+      <!-- EDIT OPEN BUTTON -->
+      <i ng-click="excuseCtrl.showEditForm(excuse.id)" class="fa fa-pencil" aria-hidden="true"></i>
+      <!-- DELETE BUTTON -->
+      <i ng-click="excuseCtrl.deleteExcuse(excuse.id)" type="submit" class="fa fa-trash" aria-hidden="true"></i>
+
       <div ng-if="excuseCtrl.editForm" id="edit-delete">
         <!-- EDIT FORM -->
         <form ng-submit="excuseCtrl.updateExcuse(excuse.excuse)">
           <input type="text" ng-model="excuse.excuse.content" class="update-input">
           <input type="submit" value="Update" class="update-submit">
         </form>
-        <!-- DELETE BUTTON -->
-        <div ng-click="excuseCtrl.deleteExcuse(excuse.id)" type="submit" ><i class="fa fa-trash" aria-hidden="true"></i></div>
+        <!-- CANCEL CHANGES BUTTON -->
         <div ng-click="excuseCtrl.cancelEditForm()"><i class="fa fa-times" aria-hidden="true"><span class="cancel"> cancel</span></i></div>
       </li>
       </div>

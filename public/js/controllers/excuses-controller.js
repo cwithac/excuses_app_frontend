@@ -82,7 +82,7 @@ function($http, $scope) {
     this.addForm = false;
   }
 
-  this.showEditForm = function() {
+  this.showEditForm = function(relation) {
     this.editForm = true;
   };
 
