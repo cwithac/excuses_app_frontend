@@ -49,11 +49,18 @@ function($http, $scope) {
           }
         }
       }).then(function(response){
-        console.log('New excuse: ', response);
-        this.formData = {};
-        this.addForm = false;
-        this.getExcuses();
-      }.bind(this));
+        if (response.data.status === 201){
+          console.log('New excuse: ', response);
+          this.formData = {};
+          this.addForm = false;
+          this.getExcuses();
+        } else {
+          console.log('something went wrong');
+        }
+      }.bind(this), function(error){
+        console.log(error);
+        console.log('something went wrong');
+      });
     } else {
       console.log('occasion empty');
       this.alert = "Please try again."
