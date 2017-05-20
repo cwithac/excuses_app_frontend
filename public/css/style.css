@@ -1,11 +1,15 @@
+/*FOR DEVELOPMENT ONLY*/
+
+/*FOR DEVELOPMENT ONLY*/
+
 @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 @import url('https://fonts.googleapis.com/css?family=Bangers');
 @import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 * {
-box-sizing: border-box;
-/*border: 1px dotted black;*/
+  box-sizing: border-box;
+  /*border: 1px dotted black;*/
 }
 
 body {
@@ -21,19 +25,13 @@ nav {
   align-content: center;
   background-color: black;
   color: white;
-  padding-top: 5px;
-  padding-bottom: 5px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
+  padding-bottom: 5px;
   font-family: 'Julius Sans One', sans-serif;
-}
-
-nav a:hover {
-  color: limegreen;
-  text-decoration: none;
 }
 
 header {
@@ -42,28 +40,18 @@ header {
   justify-content: space-between;
   align-content: center;
   padding: 10px;
-  background-color: limegreen;
+  background-color: orange;
 }
 
 header h1 {
   width: 50%;
   text-align: center;
   font-family: 'Bangers', cursive;
-  font-size: 60px;
-  margin-top: 25px;
-  position: sticky;
+  font-size: 80px;
 }
 
 h2 {
   font-family: 'Julius Sans One', sans-serif;
-}
-
-li {
-  list-style: none;
-}
-
-ul {
-  padding-left: 0;
 }
 
 .header-img {
@@ -74,7 +62,7 @@ ul {
 }
 
 .header-img img{
-  height: 150px;
+  width: 50%;
   display: block;
 }
 

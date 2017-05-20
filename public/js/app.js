@@ -3,7 +3,7 @@
 var app = angular.module('excuses-app', []);
 
 app.controller('mainController', ['$http', '$scope', function($http, $scope){
-  this.title = "The Perfect Excuse"
+  this.title = "The Perfect Excuse ..."
 
   // this is the url for our backend, inject scope to your controllers and
   // you should be able to use this variable anywhere
