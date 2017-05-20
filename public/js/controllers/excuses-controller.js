@@ -7,6 +7,7 @@ function($http, $scope) {
   this.addForm = false;
   this.editForm = false;
   this.initialCount = 1;
+  this.alert = '';
 
   this.getExcuses = function() {
     $http({
@@ -33,23 +34,31 @@ function($http, $scope) {
   // };
 
   this.createExcuse = function(){
-  $http({
-    method: 'POST',
-    url: 'http://localhost:3000/excuses',
-    data: {
-      excuse: {
-        content: this.formData.content,
-        count: this.initialCount,
-        occasion: this.formData.occasion
-      }
-    }
-  }).then(function(response){
-      console.log('New excuse: ', response);
-      this.formData = {};
-      this.addForm = false;
-      this.getExcuses();
-  }.bind(this));
-};
+    console.log(this.formData.occasion);
+    this.alert = '';
+    if (this.formData.occasion && this.formData.content && this.formData.content.trim() !== '') {
+      console.log('inside if');
+      $http({
+        method: 'POST',
+        url: 'http://localhost:3000/excuses',
+        data: {
+          excuse: {
+            content: this.formData.content,
+            count: this.initialCount,
+            occasion: this.formData.occasion
+          }
+        }
+      }).then(function(response){
+        console.log('New excuse: ', response);
+        this.formData = {};
+        this.addForm = false;
+        this.getExcuses();
+      }.bind(this));
+    } else {
+      console.log('occasion empty');
+      this.alert = "Please try again."
+    } //END IF
+  };
 
   this.updateExcuse = function(excuse) {
     $http({
