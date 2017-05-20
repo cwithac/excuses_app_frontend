@@ -1,8 +1,8 @@
 # Excuses App Title
 
-#### Front End: [Hosted on Heroku](#) + [gitHub Repository](https://github.com/cwithac/excuses_app_frontend)
+#### Front End: [Hosted on Heroku](https://find-the-perfect-excuse.herokuapp.com/) + [gitHub Repository](https://github.com/cwithac/excuses_app_frontend)
 
-#### Back End: [Hosted on Heroku](#) + [gitHub Repository](https://github.com/cwithac/excuses_app_api)
+#### Back End: [Hosted on Heroku](https://perfect-excuse.herokuapp.com/relations) + [gitHub Repository](https://github.com/cwithac/excuses_app_api)
 
 App Summary Text
 
@@ -20,11 +20,14 @@ IMAGE
 
 ```
 + Rails 5, Ruby
-+ PostgresQL DB
++ PostgresQL DB, JSON API
++ Many to Many Through Relationship : Occasions, Excuses
++ One to Many Relationship: Users
++ Javascript Web Token
 + Express, AngularJS, Node
 + HTML, Javascript
 + Bootstrap Framework | CSS
-+ RESTful routes
++ RESTful Routes (Full: Excuses, Users - Partial: Occasions)
 ```
 
 ### Upcoming Features
