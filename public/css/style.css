@@ -2,10 +2,11 @@
 @import url('https://fonts.googleapis.com/css?family=Bangers');
 @import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Fascinate');
+
 
 * {
-box-sizing: border-box;
-/*border: 1px dotted black;*/
+  box-sizing: border-box;
 }
 
 body {
@@ -19,7 +20,7 @@ nav {
   flex-flow: row nowrap;
   justify-content: flex-end;
   align-content: center;
-  background-color: black;
+  background-color: #262626;
   color: white;
   padding: 2vh 2vw;
 }
@@ -41,8 +42,8 @@ header {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-content: center;
-  padding: 10px;
-  background-color: limegreen;
+  /*padding: 2vh 2vw;*/
+  background-color: #f8f8f8;
 }
 
 header h1 {
@@ -50,6 +51,16 @@ header h1 {
   text-align: center;
   /*font-family: 'Bangers', cursive;*/
   font-family: 'Julius Sans One', sans-serif;
+  font-family: 'Fascinate', cursive;
+  font-size: 9vw;
+  align-self: center;
+  /*transform: rotate(25deg);*/
+  font-weight: 900;
+  padding:0;
+  margin: 0;
+  line-height: 9vw;
+  color: #262626;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -73,8 +84,9 @@ ul {
 }
 
 .header-img img{
-  height: 100%;
+  width: 100%;
   display: block;
+  border-bottom-right-radius: 60%;
 }
 
 .container {
