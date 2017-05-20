@@ -11,8 +11,10 @@
 <!-- CREATE FORM -->
 <div ng-if="excuseCtrl.addForm" id="create-excuse">
   <form ng-submit="excuseCtrl.createExcuse()">
-    <input type="text" ng-model="excuseCtrl.formData.content" placeholder="What's your excuse?">
-    <input type="text" ng-model="excuseCtrl.formData.count" placeholder="Number of times used?">
+    <label for="excuse">excuse: </label>
+    <input type="text" ng-model="excuseCtrl.formData.content" placeholder="What's your excuse?"></br>
+    <!-- <input type="text" ng-model="excuseCtrl.formData.count" placeholder="Number of times used?"> -->
+    <label for="occasion">occasion: </label>
     <select ng-model="excuseCtrl.formData.occasion">
       <option ng-repeat="occasion in excuseCtrl.occasion"  value="{{occasion.title}}">{{occasion.title}}</option>
     </select>
