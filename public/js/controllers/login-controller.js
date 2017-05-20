@@ -2,7 +2,7 @@ angular.module('excuses-app').controller('loginController', ['$http', '$scope',
 function($http, $scope) {
   // ******************************* jQuery ***********************************
 
-  // --------------------- hiding / showing modal on click ---------------------
+  // --------------------- hiding / showing modals on click ---------------------
 
   // --- elements ---
   $signUpLink = $('#sign-up-link')
@@ -11,6 +11,8 @@ function($http, $scope) {
   $logInModal = $('#login-modal');
   $modal = $('.modal');
   $closeBtn = $('.close-btn');
+  $editProfileLink = $('#edit-profile-link');
+  $editProfileModal = $('#edit-profile-modal');
 
   // --- actions ---
   // modals hidden by default
@@ -28,16 +30,23 @@ function($http, $scope) {
     $logInModal.show();
   };
 
+  // function for opening edit profile modal
+  $openEditProfileModal = function() {
+    console.log('calling');
+    $modal.hide();
+    $editProfileModal.show();
+  };
+
   // function for closing all modals
   $closeModal = function() {
     $modal.hide();
   };
 
   //--- event Listeners ---
-  $signUpLink.on('click', $openSignUpModal)
-  $logInLink.on('click', $openlogInModal)
-  $closeBtn.on('click', $closeModal)
-
+  $signUpLink.on('click', $openSignUpModal);
+  $logInLink.on('click', $openlogInModal);
+  $closeBtn.on('click', $closeModal);
+  $editProfileLink.on('click', $openEditProfileModal);
 
   // ******************************* Angular ***********************************
 
@@ -59,7 +68,9 @@ function($http, $scope) {
         console.log(response.data);
         if (response.data.status === 200) {
           // saves webtoken to local storage
-          localStorage.setItem('token', JSON.stringify(response.data.token));
+          localStorage.setItem('token', JSON.stringify(response.data.token))
+          localStorage.setItem('username', JSON.stringify(response.data.user.username));
+          localStorage.setItem('user_id', JSON.stringify(response.data.user.id));
         } else {
           loginData.message = 'Sorry, the username and password you provided don\'t match our records.';
         }
@@ -104,6 +115,7 @@ function($http, $scope) {
   // this function will delete the webtoken from local storage
   this.logout = function() {
     localStorage.clear('token');
+    $scope.userData = {};
     location.reload();
   };
 
