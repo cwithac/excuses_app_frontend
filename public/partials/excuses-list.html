@@ -1,7 +1,19 @@
 <!-- ADD EDIT -->
 <div id="add-edit">
-  <h6><i class="fa fa-plus" aria-hidden="true"></i>Add an Excuse</h6>
+  <h6 ng-click="excuseCtrl.showAddForm()"><i class="fa fa-plus" aria-hidden="true"></i>Add an Excuse</h6>
   <h6><i class="fa fa-pencil" aria-hidden="true"></i>Edit an Excuse</h6>
+</div>
+
+<!-- CREATE FORM -->
+<div ng-if="excuseCtrl.addForm" id="create-excuse">
+  <form ng-submit="excuseCtrl.createExcuse()">
+    <input type="text" ng-model="excuseCtrl.formData.content" placeholder="What's your excuse?">
+    <input type="text" ng-model="excuseCtrl.formData.count" placeholder="Number of times used?">
+    <select ng-model="excuseCtrl.formData.occasion">
+      <option ng-repeat="occasion in excuseCtrl.occasion"  value="{{occasion.title}}">{{occasion.title}}</option>
+    </select>
+    <input type="submit" class="add-submit" value="Add">
+  </form>
 </div>
 
 <ul class="fa-ul" ng-repeat="excuse in excuseCtrl.excuses | orderBy : 'occasion.title'">
@@ -17,15 +29,3 @@
         <div ng-click="excuseCtrl.deleteExcuse(excuse.id)" type="submit" ><span class="glyphicon glyphicon-trash"></span></div></li>
       </div>
 </ul>
-
-<!-- CREATE FORM -->
-<div id="create-excuse">
-  <form ng-submit="excuseCtrl.createExcuse()">
-    <input type="text" ng-model="excuseCtrl.formData.content" placeholder="content">
-    <input type="text" ng-model="excuseCtrl.formData.count" placeholder="times used">
-    <select ng-model="excuseCtrl.formData.occasion">
-      <option ng-repeat="occasion in excuseCtrl.occasion"  value="{{occasion.title}}">{{occasion.title}}</option>
-    </select>
-    <input type="submit" class="add-submit" value="Add">
-  </form>
-</div>

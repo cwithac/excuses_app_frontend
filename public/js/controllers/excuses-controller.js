@@ -3,7 +3,8 @@ function($http, $scope) {
 
   this.excuses = [];
   this.formData = {};
-  this.occasion = []
+  this.occasion = [];
+  this.addForm = false;
 
   this.getExcuses = function() {
     $http({
@@ -42,6 +43,7 @@ function($http, $scope) {
       console.log('New excuse: ', response);
       this.formData = {};
       this.getExcuses();
+      this.addForm = false;
   }.bind(this));
   console.log(this.formData);
   console.log(this.formData.occasion);
@@ -71,6 +73,12 @@ function($http, $scope) {
      this.getExcuses();
     }.bind(this));
 
+  };
+
+  this.showAddForm = function() {
+    console.log(this.addForm);
+    this.addForm = true;
+    console.log(this.addForm);
   };
 
   this.getExcuses();
