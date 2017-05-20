@@ -95,7 +95,7 @@ function($http, $scope) {
     if (signUpData.password.trim() >= 6 && signUpData.password === signUpData.confirmPassword) {
       $http({
         method: 'POST',
-        url: /*$scope.baseUrl*/ 'http://localhost:3000/' + 'users',
+        url: $scope.baseUrl + 'users',
         data: {
           user: {
             username: signUpData.username,
@@ -137,7 +137,7 @@ function($http, $scope) {
     console.log('editing username');
     $http({
       method: 'PATCH',
-      url: 'http://localhost:3000/' + 'users/' + $scope.userData.id,
+      url: $scope.baseUrl + 'users/' + $scope.userData.id,
       headers: {
         Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
       },
@@ -174,7 +174,7 @@ function($http, $scope) {
     if (edited.password.trim() >= 6 && edited.password === edited.confirmPassword) {
       $http({
         method: 'PATCH',
-        url: 'http://localhost:3000/' + 'users/' + $scope.userData.id,
+        url: $scope.baseUrl + 'users/' + $scope.userData.id,
         headers: {
           Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
         },
@@ -213,7 +213,7 @@ function($http, $scope) {
     this.msg = '';
     $http({
       method: 'DELETE',
-      url: 'http://localhost:3000/' + 'users/' + $scope.userData.id,
+      url: $scope.baseUrl + 'users/' + $scope.userData.id,
       headers: {
         Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
       },
