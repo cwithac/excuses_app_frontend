@@ -21,8 +21,11 @@
 }
 
 #add-edit {
-  display: flex;
-  justify-content: space-around;
+  margin: 0;
+}
+
+#add-edit h6 {
+  margin: 0;
 }
 
 h6:hover {
