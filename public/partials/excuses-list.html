@@ -13,7 +13,7 @@
     <!-- <input type="text" ng-model="excuseCtrl.formData.count" placeholder="Number of times used?"> -->
     <label for="occasion">occasion: </label>
     <select ng-model="excuseCtrl.formData.occasion">
-      <option ng-repeat="occasion in excuseCtrl.occasion"  value="{{occasion.title}}">{{occasion.title}}</option>
+      <option ng-repeat="occasion in occasions"  value="{{occasion.title}}">{{occasion.title}}</option>
     </select>
     <input type="submit" class="add-submit" value="Add">
     <div ng-click="excuseCtrl.cancelAddForm()"><i class="fa fa-times" aria-hidden="true"><span class="cancel"> cancel</span></i></div>
@@ -26,7 +26,7 @@
       <span id="excuseCount"><i class="fa fa-plus" aria-hidden="true"></i>{{excuse.excuse.count}}</span></br>{{excuse.excuse.content}}</br><span id="occasionTag">{{excuse.occasion.title}}</span></br>
 
       <!-- EDIT OPEN BUTTON -->
-      <i ng-click="excuseCtrl.showEditForm(excuse.id)" class="fa fa-pencil" aria-hidden="true"></i>
+      <i ng-click="excuseCtrl.showEditForm()" class="fa fa-pencil" aria-hidden="true"></i>
       <!-- DELETE BUTTON -->
       <i ng-click="excuseCtrl.deleteExcuse(excuse.id)" type="submit" class="fa fa-trash" aria-hidden="true"></i>
 

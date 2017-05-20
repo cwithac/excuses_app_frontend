@@ -18,15 +18,15 @@ function($http, $scope) {
     }.bind(this));
   };
 
-  this.getOccasions = function() {
-    $http({
-      method: 'GET',
-      url: 'http://localhost:3000/occasions',
-    }).then(function(response){
-      console.log('all occasions', response);
-      this.occasion = response.data.occasions;
-    }.bind(this));
-  };
+  // this.getOccasions = function() {
+  //   $http({
+  //     method: 'GET',
+  //     url: 'http://localhost:3000/occasions',
+  //   }).then(function(response){
+  //     console.log('all occasions', response);
+  //     this.occasion = response.data.occasions;
+  //   }.bind(this));
+  // };
 
   this.createExcuse = function(){
   $http({
@@ -82,7 +82,7 @@ function($http, $scope) {
     this.addForm = false;
   }
 
-  this.showEditForm = function(id) {
+  this.showEditForm = function() {
     this.editForm = true;
   };
 
@@ -91,6 +91,6 @@ function($http, $scope) {
   }
 
   this.getExcuses();
-  this.getOccasions();
+  // $scope.getOccasions();
 
 }]); //excusesController END
