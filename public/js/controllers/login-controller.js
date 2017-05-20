@@ -92,7 +92,7 @@ function($http, $scope) {
   // this function will make a sign up request when called
   this.signUp = function(signUpData) {
     this.msg = '';
-    if (edited.password.trim() >= 6 && signUpData.password === signUpData.confirmPassword) {
+    if (signUpData.password.trim() >= 6 && signUpData.password === signUpData.confirmPassword) {
       $http({
         method: 'POST',
         url: /*$scope.baseUrl*/ 'http://localhost:3000/' + 'users',
@@ -104,11 +104,16 @@ function($http, $scope) {
         }
       }).then(
         function(response) {
-          console.log(response.data)
-          signUpData.username = '';
-          signUpData.password = '';
-          signUpData.confirmPassword = '';
-          this.msg = 'Thank you, ' + response.data.user.username + '! Your profile was created. Please log in to continue.';
+          if (response.data.status === 201) {
+            signUpData.username = '';
+            signUpData.password = '';
+            signUpData.confirmPassword = '';
+            this.msg = 'Thank you, ' + response.data.user.username + '! Your profile was created. Please log in to continue.';
+          } else if (response.data.status === 422) {
+            this.msg = 'Sorry, this username is already taken!';
+          } else {
+            this.msg = 'Sorry, something went wrong. Please try again later.';
+          }
         }.bind(this),
         function(error) {
           console.log(error);
@@ -148,6 +153,8 @@ function($http, $scope) {
           edited.username = '';
           localStorage.setItem('username', JSON.stringify(response.data.user.username));
           this.msg = 'Thank you, your username has been changed!';
+        } else if (response.data.status === 422) {
+          this.msg = 'Sorry, this username is already taken!';
         } else {
           edited.username = '';
           this.msg = 'Sorry, something went wrong. Your changes could not be saved.';
@@ -230,5 +237,4 @@ function($http, $scope) {
           this.msg = 'Sorry, something went wrong. Your profile was not deleted.';
       }.bind(this));
   };
-
 }]);
