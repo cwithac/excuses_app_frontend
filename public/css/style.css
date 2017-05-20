@@ -17,16 +17,18 @@ body {
 nav {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-content: center;
   background-color: black;
   color: white;
+  padding: 2vh 2vw;
 }
 
 nav a {
   color: white;
   text-decoration: none;
   font-family: 'Julius Sans One', sans-serif;
+  padding: 0 2vw;
 }
 
 nav a:hover {
