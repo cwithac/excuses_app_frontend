@@ -1,7 +1,7 @@
 .update-submit, .add-submit {
   padding: 0;
   width: 60px;
-  font-family: 'Julius Sans One', sans-serif;
+  /*font-family: 'Julius Sans One', sans-serif;*/
 }
 
 .update-submit:hover, .add-submit:hover {
@@ -11,10 +11,6 @@
 
 .update-input {
   width: 75%;
-}
-
-button {
-  margin-left: 5px;
 }
 
 #add-edit {
@@ -27,15 +23,11 @@ h6:hover {
   cursor: pointer;
 }
 
-.glyphicon:hover {
+.glyphicon:hover, .fa:hover {
   color: limegreen;
   cursor: pointer;
 }
 
 #occasionTag {
   font-family: 'Julius Sans One', sans-serif;
-}
-
-#create-excuse {
-  margin-left: 30px;
 }
