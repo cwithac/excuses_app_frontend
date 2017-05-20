@@ -35,6 +35,10 @@ h6:hover {
   cursor: pointer;
 }
 
+.cancel {
+  font-family: 'Julius Sans One', sans-serif;
+}
+
 #occasionTag {
   font-family: 'Julius Sans One', sans-serif;
 }

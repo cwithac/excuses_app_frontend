@@ -19,12 +19,14 @@
       <option ng-repeat="occasion in excuseCtrl.occasion"  value="{{occasion.title}}">{{occasion.title}}</option>
     </select>
     <input type="submit" class="add-submit" value="Add">
+    <div ng-click="excuseCtrl.cancelAddForm()"><i class="fa fa-times" aria-hidden="true"><span class="cancel"> cancel</span></i></div>
   </form>
 </div>
 
 <ul ng-repeat="excuse in excuseCtrl.excuses | orderBy : 'occasion.title'">
     <!-- SHOW -->
-    <li><span id="excuseCount"><i class="fa fa-plus" aria-hidden="true"></i>{{excuse.excuse.count}}</span></br><span id="occasionTag">{{excuse.occasion.title}}</span></br>{{excuse.excuse.content}}</br>
+    <li>
+      <span id="excuseCount"><i class="fa fa-plus" aria-hidden="true"></i>{{excuse.excuse.count}}</span></br><span id="occasionTag">{{excuse.occasion.title}}</span></br>{{excuse.excuse.content}}</br>
       <div ng-if="excuseCtrl.editForm" id="edit-delete">
         <!-- EDIT FORM -->
         <form ng-submit="excuseCtrl.updateExcuse(excuse.excuse)">
@@ -32,6 +34,8 @@
           <input type="submit" value="Update" class="update-submit">
         </form>
         <!-- DELETE BUTTON -->
-        <div ng-click="excuseCtrl.deleteExcuse(excuse.id)" type="submit" ><i class="fa fa-trash" aria-hidden="true"></i></div></li>
+        <div ng-click="excuseCtrl.deleteExcuse(excuse.id)" type="submit" ><i class="fa fa-trash" aria-hidden="true"></i></div>
+        <div ng-click="excuseCtrl.cancelEditForm()"><i class="fa fa-times" aria-hidden="true"><span class="cancel"> cancel</span></i></div>
+      </li>
       </div>
 </ul>
