@@ -12,6 +12,10 @@ app.controller('mainController', ['$http', '$scope', function($http, $scope){
   // scope variable holding userData, available to all controllers
   $scope.userData = {};
 
+  // scope variable holding occasions
+  $scope.occasions = [];
+  
+
   // this is a function that checks if a user is logged in, inject scope to your
   // controllers and you should be able to use this variable anywhere
   $scope.userIsLoggedIn = function() {

@@ -18,15 +18,15 @@ function($http, $scope) {
     }.bind(this));
   };
 
-  this.getOccasions = function() {
-    $http({
-      method: 'GET',
-      url: 'http://localhost:3000/occasions',
-    }).then(function(response){
-      console.log('all occasions', response);
-      this.occasion = response.data.occasions;
-    }.bind(this));
-  };
+  // this.getOccasions = function() {
+  //   $http({
+  //     method: 'GET',
+  //     url: 'http://localhost:3000/occasions',
+  //   }).then(function(response){
+  //     console.log('all occasions', response);
+  //     this.occasion = response.data.occasions;
+  //   }.bind(this));
+  // };
 
   this.createExcuse = function(){
   $http({
@@ -42,6 +42,7 @@ function($http, $scope) {
   }).then(function(response){
       console.log('New excuse: ', response);
       this.formData = {};
+      this.addForm = false;
       this.getExcuses();
   }.bind(this));
 };
@@ -56,7 +57,7 @@ function($http, $scope) {
         }
       }
     }).then(function(response){
-
+      this.editForm = false;
     }.bind(this));
     console.log(excuse);
   };
@@ -67,36 +68,29 @@ function($http, $scope) {
      url: 'http://localhost:3000/relations/'+ id,
     }).then(function(response){
      console.log("Deleted: ", response);
+     this.editForm = false;
      this.getExcuses();
     }.bind(this));
 
   };
-  
+
   this.showAddForm = function() {
-    console.log(this.addForm);
     this.addForm = true;
-    console.log(this.addForm);
   };
 
   this.cancelAddForm = function() {
-    console.log(this.addForm);
     this.addForm = false;
-    console.log(this.addForm);
   }
 
   this.showEditForm = function() {
-    console.log(this.editForm);
     this.editForm = true;
-    console.log(this.editForm);
   };
 
   this.cancelEditForm = function() {
-    console.log(this.addForm);
     this.editForm = false;
-    console.log(this.addForm);
   }
 
   this.getExcuses();
-  this.getOccasions();
+  // $scope.getOccasions();
 
 }]); //excusesController END
