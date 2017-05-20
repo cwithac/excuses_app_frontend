@@ -71,9 +71,7 @@ function($http, $scope) {
     }.bind(this));
 
   };
-
-<<<<<<< HEAD
-=======
+  
   this.showAddForm = function() {
     console.log(this.addForm);
     this.addForm = true;
