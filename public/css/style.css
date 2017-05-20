@@ -2,7 +2,7 @@
 
 /*FOR DEVELOPMENT ONLY*/
 
-@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('https://fonts.googleapis.com/css?family=Bangers');
 @import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
@@ -30,7 +30,7 @@ nav {
 nav a {
   color: white;
   text-decoration: none;
-  padding-bottom: 5px;
+  /*padding-bottom: 5px;*/
   font-family: 'Julius Sans One', sans-serif;
 }
 

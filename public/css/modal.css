@@ -20,7 +20,6 @@
 .modal legend {
   background-color: black;
   color: white;
-  /*text-align: center;*/
   padding: .2em;
 }
 
@@ -81,6 +80,36 @@
   background-color: rgba(255,0,0,.5);
 }
 
+.user-profile {
+  padding: 1vh 1vw;
+  background-color: #f8f8f8;
+}
+
+.user-profile h4 {
+  font-size: 1.2em;
+}
+
+.user-profile ul {
+  list-style: none;
+}
+
+.user-profile ul li {
+  padding: 1vh 1vw;
+}
+
+.user-profile ul li i {
+  vertical-align: middle;
+}
+
+.user-profile ul li a {
+  padding-left: 2vw;
+  color: black;
+}
+
+.user-profile ul li a:hover {
+  color: #808080;
+}
+
 @media (max-width: 768px) {
   .modal {
     width: 95%;
@@ -102,5 +131,11 @@
     width: 90%;
     font-size: .8em;
     margin: 1vh 1vw;
+  }
+
+  .user-profile ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
   }
 }
