@@ -15,6 +15,10 @@ function($http, $scope) {
     }).then(function(response){
       console.log('all relations', response);
       this.excuses = response.data;
+      for (var i = 0; i < this.excuses.length; i++) {
+        this.excuses[i].excuse.editForm = false;
+      }
+      console.log(this.excuses);
     }.bind(this));
   };
 
@@ -82,8 +86,9 @@ function($http, $scope) {
     this.addForm = false;
   }
 
-  this.showEditForm = function() {
-    this.editForm = true;
+  this.showEditForm = function(excuse) {
+    console.log(excuse);
+    excuse.excuse.editForm = true;
   };
 
   this.cancelEditForm = function() {

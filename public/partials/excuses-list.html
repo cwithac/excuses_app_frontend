@@ -26,11 +26,11 @@
       <span id="excuseCount"><i class="fa fa-plus" aria-hidden="true"></i>{{excuse.excuse.count}}</span></br>{{excuse.excuse.content}}</br><span id="occasionTag">{{excuse.occasion.title}}</span></br>
 
       <!-- EDIT OPEN BUTTON -->
-      <i ng-click="excuseCtrl.showEditForm()" class="fa fa-pencil" aria-hidden="true"></i>
+      <i ng-click="excuseCtrl.showEditForm(excuse)" class="fa fa-pencil" aria-hidden="true"></i>
       <!-- DELETE BUTTON -->
       <i ng-click="excuseCtrl.deleteExcuse(excuse.id)" type="submit" class="fa fa-trash" aria-hidden="true"></i>
 
-      <div ng-if="excuseCtrl.editForm" id="edit-delete">
+      <div ng-if="excuse.excuse.editForm" id="edit-delete">
         <!-- EDIT FORM -->
         <form ng-submit="excuseCtrl.updateExcuse(excuse.excuse)">
           <input type="text" ng-model="excuse.excuse.content" class="update-input">
