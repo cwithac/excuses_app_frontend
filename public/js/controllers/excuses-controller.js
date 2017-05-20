@@ -91,8 +91,9 @@ function($http, $scope) {
     excuse.excuse.editForm = true;
   };
 
-  this.cancelEditForm = function() {
-    this.editForm = false;
+  this.cancelEditForm = function(excuse) {
+    console.log(excuse);
+    excuse.excuse.editForm = false;
   }
 
   this.getExcuses();
