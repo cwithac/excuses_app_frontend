@@ -5,6 +5,7 @@ function($http, $scope) {
   this.formData = {};
   this.occasion = [];
   this.addForm = false;
+  this.editForm = false;
 
   this.getExcuses = function() {
     $http({
@@ -59,7 +60,7 @@ function($http, $scope) {
         }
       }
     }).then(function(response){
-
+      this.editForm = false;
     }.bind(this));
     console.log(excuse);
   };
@@ -79,6 +80,12 @@ function($http, $scope) {
     console.log(this.addForm);
     this.addForm = true;
     console.log(this.addForm);
+  };
+
+  this.showEditForm = function() {
+    console.log(this.editForm);
+    this.editForm = true;
+    console.log(this.editForm);
   };
 
   this.getExcuses();

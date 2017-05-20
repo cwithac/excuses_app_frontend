@@ -1,7 +1,7 @@
 <!-- ADD EDIT -->
 <div id="add-edit">
   <h6 ng-click="excuseCtrl.showAddForm()"><i class="fa fa-plus" aria-hidden="true"></i>Add an Excuse</h6>
-  <h6><i class="fa fa-pencil" aria-hidden="true"></i>Edit an Excuse</h6>
+  <h6 ng-click="excuseCtrl.showEditForm()"><i class="fa fa-pencil" aria-hidden="true"></i>Edit an Excuse</h6>
 </div>
 
 <!-- CREATE FORM -->
@@ -18,8 +18,8 @@
 
 <ul class="fa-ul" ng-repeat="excuse in excuseCtrl.excuses | orderBy : 'occasion.title'">
     <!-- SHOW -->
-    <li><span id="excuseCount" class="glyphicon glyphicon-arrow-up">{{excuse.excuse.count}}</span></br><span id="occasionTag">{{excuse.occasion.title}}</span></br>{{excuse.excuse.content}}</br>
-      <div id="edit-delete">
+    <li><span id="excuseCount" class="glyphicon glyphicon-arrow-up" >{{excuse.excuse.count}}</span></br><span id="occasionTag">{{excuse.occasion.title}}</span></br>{{excuse.excuse.content}}</br>
+      <div ng-if="excuseCtrl.editForm" id="edit-delete">
         <!-- EDIT FORM -->
         <form ng-submit="excuseCtrl.updateExcuse(excuse.excuse)">
           <input type="text" ng-model="excuse.excuse.content" class="update-input">
