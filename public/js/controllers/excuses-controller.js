@@ -3,7 +3,10 @@ function($http, $scope) {
 
   this.excuses = [];
   this.formData = {};
-  this.occasion = []
+  this.occasion = [];
+  this.addForm = false;
+  this.editForm = false;
+  this.initialCount = 1;
 
   this.getExcuses = function() {
     $http({
@@ -25,8 +28,6 @@ function($http, $scope) {
     }.bind(this));
   };
 
-  console.log(this.formData.occasion);
-
   this.createExcuse = function(){
   $http({
     method: 'POST',
@@ -34,7 +35,7 @@ function($http, $scope) {
     data: {
       excuse: {
         content: this.formData.content,
-        count: this.formData.count,
+        count: this.initialCount,
         occasion: this.formData.occasion
       }
     }
@@ -43,8 +44,6 @@ function($http, $scope) {
       this.formData = {};
       this.getExcuses();
   }.bind(this));
-  console.log(this.formData);
-  console.log(this.formData.occasion);
 };
 
   this.updateExcuse = function(excuse) {
@@ -72,6 +71,32 @@ function($http, $scope) {
     }.bind(this));
 
   };
+
+<<<<<<< HEAD
+=======
+  this.showAddForm = function() {
+    console.log(this.addForm);
+    this.addForm = true;
+    console.log(this.addForm);
+  };
+
+  this.cancelAddForm = function() {
+    console.log(this.addForm);
+    this.addForm = false;
+    console.log(this.addForm);
+  }
+
+  this.showEditForm = function() {
+    console.log(this.editForm);
+    this.editForm = true;
+    console.log(this.editForm);
+  };
+
+  this.cancelEditForm = function() {
+    console.log(this.addForm);
+    this.editForm = false;
+    console.log(this.addForm);
+  }
 
   this.getExcuses();
   this.getOccasions();

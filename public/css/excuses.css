@@ -1,0 +1,44 @@
+.update-submit, .add-submit {
+  padding: 0;
+  width: 60px;
+  /*font-family: 'Julius Sans One', sans-serif;*/
+}
+
+.update-submit:hover, .add-submit:hover {
+  color: limegreen;
+  cursor: pointer;
+}
+
+.update-input {
+  width: 75%;
+}
+
+#create-excuse label {
+  width: 20%;
+  display: inline-block;
+  margin: 0;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+#add-edit {
+  display: flex;
+  justify-content: space-around;
+}
+
+h6:hover {
+  color: limegreen;
+  cursor: pointer;
+}
+
+.glyphicon:hover, .fa:hover {
+  color: limegreen;
+  cursor: pointer;
+}
+
+.cancel {
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+#occasionTag {
+  font-family: 'Julius Sans One', sans-serif;
+}

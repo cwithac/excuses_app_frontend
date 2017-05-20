@@ -46,13 +46,27 @@ header {
 header h1 {
   width: 50%;
   text-align: center;
+<<<<<<< HEAD
   font-family: 'Bangers', cursive;
   font-size: 80px;
+=======
+  /*font-family: 'Bangers', cursive;*/
+  font-family: 'Julius Sans One', sans-serif;
+>>>>>>> 684706031f956d96f875348c709dd5f47ab32f59
 }
 
 h2 {
   font-family: 'Julius Sans One', sans-serif;
 }
+
+li {
+  list-style: none;
+}
+
+/*
+ul {
+  padding-left: 0;
+}*/
 
 .header-img {
   width: 50%;
@@ -62,7 +76,7 @@ h2 {
 }
 
 .header-img img{
-  width: 50%;
+  height: 100%;
   display: block;
 }
 
@@ -76,8 +90,7 @@ h2 {
 }
 
 .occasions {
-  width: 39%;
-  padding-left: 1%;
+  width: 40%;
 }
 
 .occasion-tag {
@@ -92,9 +105,5 @@ h2 {
 
   .occasions {
     width: 100%;
-  }
-
-  header h1 {
-    font-size: 40px;
   }
 }
