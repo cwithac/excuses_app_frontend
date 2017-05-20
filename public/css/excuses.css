@@ -13,6 +13,13 @@
   width: 75%;
 }
 
+#create-excuse label {
+  width: 20%;
+  display: inline-block;
+  margin: 0;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
 #add-edit {
   display: flex;
   justify-content: space-around;
@@ -26,6 +33,10 @@ h6:hover {
 .glyphicon:hover, .fa:hover {
   color: limegreen;
   cursor: pointer;
+}
+
+.cancel {
+  font-family: 'Julius Sans One', sans-serif;
 }
 
 #occasionTag {
