@@ -5,12 +5,15 @@
   padding: 2em;
   border-radius: .2em;
   position: fixed;
-  left: 25%;
-  top: 25%;
+  font-size: 1.5vw;
+  box-shadow: 1px 1px 10px silver;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .modal fieldset {
-  border: 1px dotted black;
+  border: 1px solid black;
 }
 
 .modal legend {
@@ -21,26 +24,32 @@
 }
 
 .modal label {
-  width: 49%;
+  width: 40%;
   display: inline-block;
   margin: auto;
 }
 
 .modal input {
-  width: 49%;
+  width: 59%;
   display: inline-block;
   margin: 5px auto;
+  font-size: 1.3vw;
+  border: 1px solid black;
 }
 
 .modal input[type='submit'] {
   display: block;
   background-color: black;
   color: white;
-  border: 1px solid black;
 }
 
 .modal input[type='submit']:hover {
   background-color: transparent;
+  color: black;
+}
+
+.modal input[type='submit']:active {
+  background-color: #ccc;
   color: black;
 }
 
@@ -56,18 +65,26 @@
   text-align: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .modal {
-    width: 90%;
-    left: 5%;
+    width: 95%;
+    font-size: 1em;
+    max-height: 95vh;
   }
 
   .modal label {
-    width: 100%;
-
+    width: 90%;
+    display: block;
+    margin: auto;
+    margin: 10px;
+    font-size: .9em;
   }
 
   .modal input {
-    width: 100%;
+    display: block;
+    margin: auto;
+    width: 90%;
+    font-size: .8em;
+    margin: 10px;
   }
 }

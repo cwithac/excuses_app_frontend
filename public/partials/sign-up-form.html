@@ -3,11 +3,11 @@
   <fieldset>
     <legend>Create an account</legend>
     <label for="username">username: </label>
-    <input type="text" ng-model="signUpData.username" placeholder="username">
+    <input type="text" ng-model="signUpData.username" placeholder="username" required>
     <label for="password">password: </label>
-    <input type="password" ng-model="signUpData.password" placeholder="password">
+    <input type="password" ng-model="signUpData.password" placeholder="password" required minlength="6">
     <label for="password">confirm password: </label>
-    <input type="password" ng-model="signUpData.confirmPassword" placeholder="password">
+    <input type="password" ng-model="signUpData.confirmPassword" placeholder="password" required minlength="6">
     <input type="submit" class="submit">
   </fieldset>
   <p>{{signUpData.message}}</p>
