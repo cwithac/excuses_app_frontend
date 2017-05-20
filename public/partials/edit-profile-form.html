@@ -1,28 +1,30 @@
 <!-- not functional yet!! -->
 <div class="modal" id="edit-profile-modal">
-  <div class="close-btn">x</div>
-  <form ng-submit="login.editUsername(edit)">
+  <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i>
+</div>
+  <form ng-submit="loginCtrl.editUsername(edited)">
     <fieldset>
       <legend>Change username</legend>
       <label for="username">username: </label>
-      <input type="text" ng-model="edit.username" placeholder="username" required>
+      <input type="text" ng-model="edited.username" placeholder="username" required>
       <input type="submit" class="submit">
     </fieldset>
   </form>
-  <form ng-submit="login.editPassword(edit)">
+  <form ng-submit="loginCtrl.editPassword(edited)">
     <fieldset>
       <legend>Change password</legend>
       <label for="password">password: </label>
-      <input type="password" ng-model="edit.password" placeholder="password" required minlength="6">
+      <input type="password" ng-model="edited.password" placeholder="password" required minlength="6">
       <label for="password">confirm password: </label>
-      <input type="password" ng-model="edit.confirmPassword" placeholder="password" required minlength="6">
+      <input type="password" ng-model="edited.confirmPassword" placeholder="password" required minlength="6">
       <input type="submit" class="submit">
     </fieldset>
   </form>
-  <form ng-submit="login.deleteProfile()">
+  <form ng-submit="loginCtrl.deleteProfile()">
     <fieldset>
       <legend>Delete account</legend>
       <input type="submit" value="DELETE" id="delete-btn">
     </fieldset>
   </form>
+  <p>{{edited.message}}</p>
 </div>

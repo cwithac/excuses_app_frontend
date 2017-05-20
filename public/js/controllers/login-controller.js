@@ -119,4 +119,38 @@ function($http, $scope) {
     location.reload();
   };
 
+  // this function will make a request to update a user's username
+  this.editUsername = function(edited) {
+    edited.message = '';
+    console.log('editing username');
+    $http({
+      method: 'PATCH',
+      url: 'http://localhost:3000/' + 'users/' + $scope.userData.id,
+      headers: {
+        Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token')) 
+      },
+      data: {
+        user: {
+          username: edited.username
+        }
+      }
+    }).then(
+      function(response) {
+        console.log(response);
+        if (response.data.status === 200) {
+          edited.username = '';
+          localStorage.setItem('username', JSON.stringify(response.data.user.username));
+          edited.message = 'Thank you, your username has been changed!';
+        } else {
+          edited.username = '';
+          edited.message = 'Sorry, something went wrong. Your changes could not be saved.';
+        }
+      },
+      function (error) {
+        console.log(error);
+        edited.username = '';
+        edited.message = 'Sorry, something went wrong. Your changes could not be saved.';
+      });
+  };
+
 }]);
