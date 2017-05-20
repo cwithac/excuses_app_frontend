@@ -15,8 +15,9 @@ app.controller('mainController', ['$http', '$scope', function($http, $scope){
   // this is a function that checks if a user is logged in, inject scope to your
   // controllers and you should be able to use this variable anywhere
   $scope.userIsLoggedIn = function() {
-    var token = JSON.parse(localStorage.getItem('token'));
-    if(token) {
+    var jwt = localStorage.getItem('token');
+    if(jwt) {
+      console.log(jwt);
       console.log('The user is logged in.');
       $scope.userData.username = JSON.parse(localStorage.getItem('username'));
       $scope.userData.id = JSON.parse(localStorage.getItem('user_id'));
