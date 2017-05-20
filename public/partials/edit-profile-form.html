@@ -20,11 +20,11 @@
       <input type="submit" class="submit">
     </fieldset>
   </form>
-  <form ng-submit="loginCtrl.deleteProfile()">
+  <form ng-submit="loginCtrl.deleteProfile(edited)">
     <fieldset>
       <legend>Delete account</legend>
       <input type="submit" value="DELETE" id="delete-btn">
     </fieldset>
   </form>
-  <p>{{edited.message}}</p>
+  <p>{{loginCtrl.msg}}</p>
 </div>

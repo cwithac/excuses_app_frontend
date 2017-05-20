@@ -50,6 +50,13 @@ function($http, $scope) {
 
   // ******************************* Angular ***********************************
 
+  // message var for feedback for user
+  this.msg = '';
+
+  // self var for allowing to call logout function in setTimeout
+  var self = this;
+
+
   // this function will make a login request when called
   this.login = function(loginData) {
     // http request
@@ -72,20 +79,20 @@ function($http, $scope) {
           localStorage.setItem('username', JSON.stringify(response.data.user.username));
           localStorage.setItem('user_id', JSON.stringify(response.data.user.id));
         } else {
-          loginData.message = 'Sorry, the username and password you provided don\'t match our records.';
+          this.msg = 'Sorry, the username and password you provided don\'t match our records.';
         }
       }.bind(this),
       function(error) {
         console.log('***** in error ');
         console.log(error);
-        loginData.message = 'Sorry, something went wrong. Please try again later.';
-      });
+        this.msg = 'Sorry, something went wrong. Please try again later.';
+      }.bind(this));
   };
 
   // this function will make a sign up request when called
   this.signUp = function(signUpData) {
-    signUpData.message = '';
-    if (signUpData.password === signUpData.confirmPassword) {
+    this.msg = '';
+    if (edited.password.trim() >= 6 && signUpData.password === signUpData.confirmPassword) {
       $http({
         method: 'POST',
         url: /*$scope.baseUrl*/ 'http://localhost:3000/' + 'users',
@@ -101,14 +108,14 @@ function($http, $scope) {
           signUpData.username = '';
           signUpData.password = '';
           signUpData.confirmPassword = '';
-          signUpData.message = 'Thank you, ' + response.data.user.username + '! Your profile was created. Please log in to continue.';
+          this.msg = 'Thank you, ' + response.data.user.username + '! Your profile was created. Please log in to continue.';
         }.bind(this),
         function(error) {
           console.log(error);
-          signUpData.message = 'Sorry, something went wrong. Please try again later.';
-        });
+          this.msg = 'Sorry, something went wrong. Please try again later.';
+        }.bind(this));
     } else {
-      signUpData.message = 'Sorry, the passwords you entered did not match.';
+      this.msg = 'Sorry, the passwords you entered did not match.';
     }
   };
 
@@ -121,13 +128,13 @@ function($http, $scope) {
 
   // this function will make a request to update a user's username
   this.editUsername = function(edited) {
-    edited.message = '';
+    this.msg = '';
     console.log('editing username');
     $http({
       method: 'PATCH',
       url: 'http://localhost:3000/' + 'users/' + $scope.userData.id,
       headers: {
-        Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token')) 
+        Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
       },
       data: {
         user: {
@@ -140,17 +147,88 @@ function($http, $scope) {
         if (response.data.status === 200) {
           edited.username = '';
           localStorage.setItem('username', JSON.stringify(response.data.user.username));
-          edited.message = 'Thank you, your username has been changed!';
+          this.msg = 'Thank you, your username has been changed!';
         } else {
           edited.username = '';
-          edited.message = 'Sorry, something went wrong. Your changes could not be saved.';
+          this.msg = 'Sorry, something went wrong. Your changes could not be saved.';
         }
-      },
+      }.bind(this),
       function (error) {
         console.log(error);
         edited.username = '';
-        edited.message = 'Sorry, something went wrong. Your changes could not be saved.';
-      });
+        this.msg = 'Sorry, something went wrong. Your changes could not be saved.';
+      }.bind(this));
+  };
+
+  // this function will make a request to update a user's password
+  this.editPassword = function(edited) {
+    this.msg = '';
+    console.log('editing password');
+    if (edited.password.trim() >= 6 && edited.password === edited.confirmPassword) {
+      $http({
+        method: 'PATCH',
+        url: 'http://localhost:3000/' + 'users/' + $scope.userData.id,
+        headers: {
+          Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
+        },
+        data: {
+          user: {
+            password: edited.password
+          }
+        }
+      }).then(
+        function(response) {
+          console.log(response);
+          if (response.data.status === 200) {
+            edited.password = '';
+            edited.confirmPassword = '';
+            this.msg = 'Thank you, your password has been changed!';
+          } else {
+            edited.password = '';
+            edited.confirmPassword = '';
+            this.msg = 'Sorry, something went wrong. Your changes could not be saved.';
+          }
+        }.bind(this),
+        function (error) {
+          console.log(error);
+          edited.password = '';
+          edited.confirmPassword = '';
+          this.msg = 'Sorry, something went wrong. Your changes could not be saved.';
+        }.bind(this));
+    } else {
+      edited.password = '';
+      edited.confirmPassword = '';
+      this.msg = 'Sorry, the passwords you entered do not match.';
+    }
+  };
+
+  this.deleteProfile = function() {
+    this.msg = '';
+    $http({
+      method: 'DELETE',
+      url: 'http://localhost:3000/' + 'users/' + $scope.userData.id,
+      headers: {
+        Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
+      },
+      data: {
+        user: {
+          id: $scope.userData.id
+        }
+      }
+    }).then(
+      function(response) {
+        console.log(response);
+        if (response.data.status === 204) {
+          this.msg = 'Thank you, your account has been deleted.';
+          setTimeout(function(){self.logout();}, 1000);
+        } else {
+          this.msg = 'Sorry, something went wrong. Your profile was not deleted.';
+        }
+      }.bind(this),
+      function (error) {
+        console.log(error);
+          this.msg = 'Sorry, something went wrong. Your profile was not deleted.';
+      }.bind(this));
   };
 
 }]);
