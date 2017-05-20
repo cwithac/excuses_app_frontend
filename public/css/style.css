@@ -46,7 +46,8 @@ header {
 header h1 {
   width: 50%;
   text-align: center;
-  font-family: 'Bangers', cursive;
+  /*font-family: 'Bangers', cursive;*/
+  font-family: 'Julius Sans One', sans-serif;
 }
 
 h2 {
