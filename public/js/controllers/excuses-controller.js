@@ -6,7 +6,8 @@ function($http, $scope) {
   this.occasion = [];
   this.addForm = false;
   this.editForm = false;
-  this.initialCount = 1;
+  this.initialCount = 0;
+  this.alert = '';
 
   this.getExcuses = function() {
     $http({
@@ -15,6 +16,10 @@ function($http, $scope) {
     }).then(function(response){
       console.log('all relations', response);
       this.excuses = response.data;
+      for (var i = 0; i < this.excuses.length; i++) {
+        this.excuses[i].excuse.editForm = false;
+      }
+      console.log(this.excuses);
     }.bind(this));
   };
 
@@ -29,23 +34,38 @@ function($http, $scope) {
   // };
 
   this.createExcuse = function(){
-  $http({
-    method: 'POST',
-    url: $scope.baseUrl + 'excuses',
-    data: {
-      excuse: {
-        content: this.formData.content,
-        count: this.initialCount,
-        occasion: this.formData.occasion
-      }
-    }
-  }).then(function(response){
-      console.log('New excuse: ', response);
-      this.formData = {};
-      this.addForm = false;
-      this.getExcuses();
-  }.bind(this));
-};
+    console.log(this.formData.occasion);
+    this.alert = '';
+    if (this.formData.occasion && this.formData.content && this.formData.content.trim() !== '') {
+      console.log('inside if');
+      $http({
+        method: 'POST',
+        url: 'http://localhost:3000/excuses',
+        data: {
+          excuse: {
+            content: this.formData.content,
+            count: this.initialCount,
+            occasion: this.formData.occasion
+          }
+        }
+      }).then(function(response){
+        if (response.data.status === 201){
+          console.log('New excuse: ', response);
+          this.formData = {};
+          this.addForm = false;
+          this.getExcuses();
+        } else {
+          console.log('something went wrong');
+        }
+      }.bind(this), function(error){
+        console.log(error);
+        console.log('something went wrong');
+      });
+    } else {
+      console.log('occasion empty');
+      this.alert = "Please try again."
+    } //END IF
+  };
 
   this.updateExcuse = function(excuse) {
     $http({
@@ -74,6 +94,23 @@ function($http, $scope) {
 
   };
 
+  this.increaseCount = function(excuse) {
+    excuse.excuse.count ++;
+    console.log(excuse.excuse.count);
+    console.log('excuse', excuse);
+    $http({
+      method: 'PATCH',
+      url: 'http://localhost:3000/excuses/' + excuse.excuse_id,
+      data: {
+        excuse: {
+          count: excuse.excuse.count
+        }
+      }
+    }).then(function(response){
+      console.log(response.data);
+    }.bind(this));
+  };
+
   this.showAddForm = function() {
     this.addForm = true;
   };
@@ -82,12 +119,14 @@ function($http, $scope) {
     this.addForm = false;
   }
 
-  this.showEditForm = function() {
-    this.editForm = true;
+  this.showEditForm = function(excuse) {
+    console.log(excuse);
+    excuse.excuse.editForm = true;
   };
 
-  this.cancelEditForm = function() {
-    this.editForm = false;
+  this.cancelEditForm = function(excuse) {
+    console.log(excuse);
+    excuse.excuse.editForm = false;
   }
 
   this.getExcuses();
