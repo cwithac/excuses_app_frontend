@@ -1,0 +1,28 @@
+<!-- not functional yet!! -->
+<div class="modal" id="edit-profile-modal">
+  <div class="close-btn">x</div>
+  <form ng-submit="login.editUsername(edit)">
+    <fieldset>
+      <legend>Change username</legend>
+      <label for="username">username: </label>
+      <input type="text" ng-model="edit.username" placeholder="username" required>
+      <input type="submit" class="submit">
+    </fieldset>
+  </form>
+  <form ng-submit="login.editPassword(edit)">
+    <fieldset>
+      <legend>Change password</legend>
+      <label for="password">password: </label>
+      <input type="password" ng-model="edit.password" placeholder="password" required minlength="6">
+      <label for="password">confirm password: </label>
+      <input type="password" ng-model="edit.confirmPassword" placeholder="password" required minlength="6">
+      <input type="submit" class="submit">
+    </fieldset>
+  </form>
+  <form ng-submit="login.deleteProfile()">
+    <fieldset>
+      <legend>Delete account</legend>
+      <input type="submit" value="DELETE" id="delete-btn">
+    </fieldset>
+  </form>
+</div>

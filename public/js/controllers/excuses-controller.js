@@ -43,7 +43,6 @@ function($http, $scope) {
       console.log('New excuse: ', response);
       this.formData = {};
       this.getExcuses();
-      this.addForm = false;
   }.bind(this));
 };
 
@@ -57,7 +56,7 @@ function($http, $scope) {
         }
       }
     }).then(function(response){
-      this.editForm = false;
+
     }.bind(this));
     console.log(excuse);
   };
@@ -69,11 +68,10 @@ function($http, $scope) {
     }).then(function(response){
      console.log("Deleted: ", response);
      this.getExcuses();
-     this.editForm = false;
     }.bind(this));
 
   };
-
+  
   this.showAddForm = function() {
     console.log(this.addForm);
     this.addForm = true;

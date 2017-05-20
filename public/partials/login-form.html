@@ -3,9 +3,10 @@
   <fieldset>
     <legend>Log in</legend>
     <label for="username">username: </label>
-    <input id="username" type="text" ng-model="loginData.username" placeholder="username">
+    <input id="username" type="text" ng-model="loginData.username" placeholder="username" required>
     <label for="password">password: </label>
-    <input id="password" type="password" ng-model="loginData.password" placeholder="password">
+    <input id="password" type="password" ng-model="loginData.password" placeholder="password" required minlength="6">
     <input type="submit" class="submit">
   </fieldset>
+  <p>{{loginData.message}}</p>
 </form>
