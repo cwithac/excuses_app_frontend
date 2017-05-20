@@ -1,5 +1,5 @@
 <form ng-submit="loginCtrl.login(loginData)" class="modal" id="login-modal">
-  <div class="close-btn">x</div>
+  <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
   <fieldset>
     <legend>Log in</legend>
     <label for="username">username: </label>
@@ -8,5 +8,5 @@
     <input id="password" type="password" ng-model="loginData.password" placeholder="password" required minlength="6">
     <input type="submit" class="submit">
   </fieldset>
-  <p>{{loginData.message}}</p>
+  <p>{{loginCtrl.msg}}</p>
 </form>
