@@ -3,7 +3,10 @@ function($http, $scope) {
 
   this.excuses = [];
   this.formData = {};
-  this.occasion = []
+  this.occasion = [];
+  this.addForm = false;
+  this.editForm = false;
+  this.initialCount = 1;
 
   this.getExcuses = function() {
     $http({
@@ -15,17 +18,15 @@ function($http, $scope) {
     }.bind(this));
   };
 
-  this.getOccasions = function() {
-    $http({
-      method: 'GET',
-      url: $scope.baseUrl + 'occasions',
-    }).then(function(response){
-      console.log('all occasions', response);
-      this.occasion = response.data.occasions;
-    }.bind(this));
-  };
-
-  console.log(this.formData.occasion);
+  // this.getOccasions = function() {
+  //   $http({
+  //     method: 'GET',
+  //     url: 'http://localhost:3000/occasions',
+  //   }).then(function(response){
+  //     console.log('all occasions', response);
+  //     this.occasion = response.data.occasions;
+  //   }.bind(this));
+  // };
 
   this.createExcuse = function(){
   $http({
@@ -34,17 +35,16 @@ function($http, $scope) {
     data: {
       excuse: {
         content: this.formData.content,
-        count: this.formData.count,
+        count: this.initialCount,
         occasion: this.formData.occasion
       }
     }
   }).then(function(response){
       console.log('New excuse: ', response);
       this.formData = {};
+      this.addForm = false;
       this.getExcuses();
   }.bind(this));
-  console.log(this.formData);
-  console.log(this.formData.occasion);
 };
 
   this.updateExcuse = function(excuse) {
@@ -57,7 +57,7 @@ function($http, $scope) {
         }
       }
     }).then(function(response){
-
+      this.editForm = false;
     }.bind(this));
     console.log(excuse);
   };
@@ -68,12 +68,29 @@ function($http, $scope) {
      url: $scope.baseUrl + 'relations/'+ id,
     }).then(function(response){
      console.log("Deleted: ", response);
+     this.editForm = false;
      this.getExcuses();
     }.bind(this));
 
   };
 
+  this.showAddForm = function() {
+    this.addForm = true;
+  };
+
+  this.cancelAddForm = function() {
+    this.addForm = false;
+  }
+
+  this.showEditForm = function() {
+    this.editForm = true;
+  };
+
+  this.cancelEditForm = function() {
+    this.editForm = false;
+  }
+
   this.getExcuses();
-  this.getOccasions();
+  // $scope.getOccasions();
 
 }]); //excusesController END

@@ -1,47 +1,59 @@
 .modal {
   width: 50%;
   margin: auto;
-  background-color: rgba(255,255,255, .9);
-  padding: 2em;
+  background-color: rgba(255,255,255, .95);
+  padding: 1em;
   border-radius: .2em;
   position: fixed;
-  left: 25%;
-  top: 25%;
+  font-size: 1.5vw;
+  box-shadow: 4px 4px 10px rgba(0,0,0,.3);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .modal fieldset {
-  border: 1px dotted black;
+  border: 1px solid black;
+  margin-top: 1em;
 }
 
 .modal legend {
   background-color: black;
   color: white;
-  /*text-align: center;*/
   padding: .2em;
 }
 
 .modal label {
-  width: 49%;
+  width: 40%;
   display: inline-block;
   margin: auto;
 }
 
-input {
-  /*margin: auto;*/
-  width: 49%;
+.modal input {
+  width: 59%;
   display: inline-block;
   margin: 5px auto;
+  font-size: 1.3vw;
+  border: 1px solid grey;
 }
 
 .modal input[type='submit'] {
   display: block;
   background-color: black;
   color: white;
+  text-transform: uppercase;
   border: 1px solid black;
 }
 
 .modal input[type='submit']:hover {
-  background-color: transparent;
+  background-color: white;
+  color: black;
+  box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+  text-shadow: 1px 1px 2px rgba(0,0,0,.3);
+}
+
+.modal input[type='submit']:active {
+  background-color: lightgrey;
   color: black;
 }
 
@@ -53,18 +65,88 @@ input {
   right: 0;
 }
 
-@media (max-width: 600px) {
+.modal .close-btn i:hover {
+  color: darkgrey;
+}
+
+.modal .close-btn i:active {
+  color: lightgrey;
+}
+
+.modal p {
+  text-align: center;
+}
+
+.modal #delete-btn {
+  border: 0;
+  background-color: rgba(255,0,0,.5);
+  color: white;
+}
+
+.modal #delete-btn:hover {
+  background-color: rgba(255,0,0,1);
+}
+
+.modal #delete-btn:active {
+  background-color: lightgrey;
+}
+
+.user-profile {
+  padding: 1vh 1vw;
+  background-color: #f8f8f8;
+}
+
+.user-profile h4 {
+  font-size: 1.2em;
+}
+
+.user-profile ul {
+  list-style: none;
+}
+
+.user-profile ul li {
+  padding: 1vh 1vw;
+}
+
+.user-profile ul li i {
+  vertical-align: middle;
+}
+
+.user-profile ul li a {
+  padding-left: 2vw;
+  color: black;
+}
+
+.user-profile ul li a:hover {
+  color: #808080;
+}
+
+@media (max-width: 768px) {
   .modal {
-    width: 90%;
-    left: 5%;
+    width: 95%;
+    font-size: 1em;
+    max-height: 95vh;
   }
 
   .modal label {
-    width: 100%;
-
+    width: 90%;
+    display: block;
+    margin: auto;
+    margin: 1vh 1vw;
+    font-size: .9em;
   }
 
   .modal input {
-    width: 100%;
+    display: block;
+    margin: auto;
+    width: 90%;
+    font-size: .8em;
+    margin: 1vh 1vw;
+  }
+
+  .user-profile ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
   }
 }
