@@ -6,6 +6,7 @@
 
 .update-submit:hover, .add-submit:hover {
   color: limegreen;
+  cursor: pointer;
 }
 
 .update-input {
@@ -23,10 +24,12 @@ button {
 
 h6:hover {
   color: limegreen;
+  cursor: pointer;
 }
 
 .glyphicon:hover {
   color: limegreen;
+  cursor: pointer;
 }
 
 #occasionTag {
