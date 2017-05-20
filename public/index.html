@@ -24,6 +24,8 @@
     <script src="js/controllers/occasion-controller.js" charset="utf-8"></script>
     <!-- user directives -->
     <script src="js/directives/user-profile.js" charset="utf-8"></script>
+    <script src="js/directives/edit-profile-form.js" charset="utf-8"></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- styles for modals -->
@@ -61,6 +63,7 @@
     <section class=modals>
       <sign-up-form ng-hide="userIsLoggedIn()"></sign-up-form>
       <login-form ng-hide="userIsLoggedIn()"></login-form>
+      <edit-profile-form ng-if="userIsLoggedIn()"></edit-profile-form>
     </section>
   </body>
 </html>
