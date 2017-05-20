@@ -6,6 +6,7 @@ function($http, $scope) {
   this.occasion = [];
   this.addForm = false;
   this.editForm = false;
+  this.initialCount = 1;
 
   this.getExcuses = function() {
     $http({
@@ -36,7 +37,7 @@ function($http, $scope) {
     data: {
       excuse: {
         content: this.formData.content,
-        count: this.formData.count,
+        count: this.initialCount,
         occasion: this.formData.occasion
       }
     }
