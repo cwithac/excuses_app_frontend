@@ -92,7 +92,7 @@
     width: 90%;
     display: block;
     margin: auto;
-    margin: 10px;
+    margin: 1vh 1vw;
     font-size: .9em;
   }
 
@@ -101,6 +101,6 @@
     margin: auto;
     width: 90%;
     font-size: .8em;
-    margin: 10px;
+    margin: 1vh 1vw;
   }
 }
