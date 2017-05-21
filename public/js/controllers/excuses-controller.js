@@ -50,6 +50,9 @@ function($http, $scope) {
             count: this.initialCount,
             occasion: this.formData.occasion,
             user_id: $scope.userData.id
+          },
+          user: {
+            id: $scope.userData.id
           }
         }
       }).then(function(response){
@@ -60,6 +63,7 @@ function($http, $scope) {
           this.getExcuses();
         } else {
           console.log('something went wrong');
+          console.log('response data', response.data);
         }
       }.bind(this), function(error){
         console.log(error);
