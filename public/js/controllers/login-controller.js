@@ -1,5 +1,14 @@
 angular.module('excuses-app').controller('loginController', ['$http', '$scope',
 function($http, $scope) {
+  //************************* initialize Angular vars **************************
+
+  // self var for allowing to call logout function in setTimeout
+  var self = this;
+
+  // message var for feedback for user
+  this.msg = '';
+
+
   // ******************************* jQuery ***********************************
 
   // --------------------- hiding / showing modals on click ---------------------
@@ -20,26 +29,28 @@ function($http, $scope) {
 
   // function for opening sing up modal
   $openSignUpModal = function() {
-    $modal.hide();
+    $closeModal();
     $signUpModal.show();
   };
 
   // function for opening log in modal
   $openlogInModal = function() {
-    $modal.hide();
+    $closeModal();
     $logInModal.show();
   };
 
   // function for opening edit profile modal
   $openEditProfileModal = function() {
-    console.log('calling');
-    $modal.hide();
+    $closeModal();
     $editProfileModal.show();
   };
 
   // function for closing all modals
   $closeModal = function() {
     $modal.hide();
+    $scope.$apply(function(){
+			self.msg = '';
+		});
   };
 
   //--- event Listeners ---
@@ -137,7 +148,7 @@ function($http, $scope) {
     console.log('editing username');
     $http({
       method: 'PATCH',
-      url: 'http://localhost:3000/' + 'users/' + $scope.userData.id,
+      url: /*$scope.baseUrl*/ 'http://localhost:3000/' + 'users/' + $scope.userData.id,
       headers: {
         Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
       },
@@ -174,7 +185,7 @@ function($http, $scope) {
     if (edited.password.trim() >= 6 && edited.password === edited.confirmPassword) {
       $http({
         method: 'PATCH',
-        url: 'http://localhost:3000/' + 'users/' + $scope.userData.id,
+        url: /*$scope.baseUrl*/ 'http://localhost:3000/' + 'users/' + $scope.userData.id,
         headers: {
           Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
         },
@@ -213,7 +224,7 @@ function($http, $scope) {
     this.msg = '';
     $http({
       method: 'DELETE',
-      url: 'http://localhost:3000/' + 'users/' + $scope.userData.id,
+      url: /*$scope.baseUrl*/ 'http://localhost:3000/' + 'users/' + $scope.userData.id,
       headers: {
         Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
       },

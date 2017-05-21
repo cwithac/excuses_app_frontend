@@ -5,14 +5,14 @@ function($http, $scope) {
   this.formData = {};
   this.occasion = [];
   this.addForm = false;
-  this.editForm = false;
+  // excuse.excuse.editForm = false;
   this.initialCount = 0;
   this.alert = '';
 
   this.getExcuses = function() {
     $http({
       method: 'GET',
-      url: 'http://localhost:3000/relations',
+      url: /*$scope.baseUrl*/ 'http://localhost:3000/' + 'relations',
     }).then(function(response){
       console.log('all relations', response);
       this.excuses = response.data;
@@ -79,24 +79,36 @@ function($http, $scope) {
     $http({
       method: 'PUT',
       url: 'http://localhost:3000/excuses/' + excuse.id,
+      headers: {
+          Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
+        },
       data: {
         excuse: {
-          content: excuse.content
+          content: excuse.content,
+          user_id: $scope.userData.id
+        },
+        user: {
+          id: $scope.userData.id
         }
       }
     }).then(function(response){
-      this.editForm = false;
+      console.log('inside promise');
+      console.log('excuse', excuse);
+      excuse.editForm = false;
     }.bind(this));
     console.log(excuse);
   };
 
-  this.deleteExcuse = function(id){
+  this.deleteExcuse = function(excuse){
     $http({
      method: 'DELETE',
-     url: 'http://localhost:3000/relations/'+ id,
+     url: 'http://localhost:3000/relations/'+ excuse.id,
+     headers: {
+         Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
+     }
     }).then(function(response){
      console.log("Deleted: ", response);
-     this.editForm = false;
+     excuse.excuse.editForm = false;
      this.getExcuses();
     }.bind(this));
 
