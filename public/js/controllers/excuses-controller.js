@@ -41,11 +41,15 @@ function($http, $scope) {
       $http({
         method: 'POST',
         url: 'http://localhost:3000/excuses',
+        headers: {
+          Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
+        },
         data: {
           excuse: {
             content: this.formData.content,
             count: this.initialCount,
-            occasion: this.formData.occasion
+            occasion: this.formData.occasion,
+            user_id: $scope.userData.id
           }
         }
       }).then(function(response){

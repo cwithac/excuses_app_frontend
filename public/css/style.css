@@ -96,15 +96,28 @@ ul {
 
 .excuses {
   width: 60%;
+  padding: 2vh 3vw;
 }
 
 .occasions {
   width: 40%;
 }
 
+.occasion-list {
+  padding: 2vh 1vw;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+
 .occasion-tag {
-  display: inline-block;
   font-family: 'Julius Sans One', sans-serif;
+  padding: 1vh 0 0 1vw;
+  font-size: 1.8vw;
+}
+
+.occasion-tag:hover {
+  color: grey;
 }
 
 @media (max-width: 600px) {
@@ -114,5 +127,9 @@ ul {
 
   .occasions {
     width: 100%;
+  }
+
+  .occasion-tag {
+    font-size: .9em;
   }
 }

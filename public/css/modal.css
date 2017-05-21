@@ -144,9 +144,12 @@
     margin: 1vh 1vw;
   }
 
+  .user-profile {
+    font-size: .8em;
+    padding: 2vh 10vw;
+  }
+
   .user-profile ul {
     padding: 0;
-    display: flex;
-    justify-content: space-around;
   }
 }
