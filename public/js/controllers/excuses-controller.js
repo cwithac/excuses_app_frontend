@@ -41,11 +41,18 @@ function($http, $scope) {
       $http({
         method: 'POST',
         url: 'http://localhost:3000/excuses',
+        headers: {
+          Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
+        },
         data: {
           excuse: {
             content: this.formData.content,
             count: this.initialCount,
-            occasion: this.formData.occasion
+            occasion: this.formData.occasion,
+            user_id: $scope.userData.id
+          },
+          user: {
+            id: $scope.userData.id
           }
         }
       }).then(function(response){
@@ -56,6 +63,7 @@ function($http, $scope) {
           this.getExcuses();
         } else {
           console.log('something went wrong');
+          console.log('response data', response.data);
         }
       }.bind(this), function(error){
         console.log(error);
