@@ -5,8 +5,6 @@ var app = angular.module('excuses-app', []);
 app.filter('sorter', function() {
   return function(items, criteria, identifier) {
     if (identifier === 'user') {
-      console.log('user!');
-      console.log(criteria);
       userItems = [];
       for (var i = 0; i < items.length; i++) {
         if (criteria === items[i].excuse.user_id) {
@@ -15,7 +13,6 @@ app.filter('sorter', function() {
       }
       return userItems;
     } else if (identifier === 'occasion'){
-      console.log('occasion!');
       occasionItems = [];
       for (var i = 0; i < items.length; i++) {
         if (criteria === items[i].occasion.title) {
