@@ -1,3 +1,14 @@
 <ul ng-repeat="occasion in occasions">
   <li>{{occasion.title}}</li>
 </ul>
+
+<div class="top-Ten">
+  <ul ng-repeat="excuse in excuseCtrl.excuses | limitTo: 10 | orderBy : 'excuse.excuse.count' ">
+      <!-- SHOW -->
+      <li>
+        <span id="excuseCount"><i class="fa fa-plus" aria-hidden="true"></i>{{excuse.excuse.count}}</span></br>
+        {{excuse.excuse.content}}</br>
+        <!-- <span id="occasionTag">{{excuse.occasion.title}}</span></br> -->
+      </li>
+  </ul>
+</div>
