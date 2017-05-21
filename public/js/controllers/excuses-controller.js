@@ -1,5 +1,5 @@
-angular.module('excuses-app').controller('excusesController', ['$http', '$scope',
-function($http, $scope) {
+angular.module('excuses-app').controller('excusesController', ['$http', '$scope', 'sorterFilter',
+function($http, $scope, userFilter) {
 
   this.excuses = [];
   this.formData = {};

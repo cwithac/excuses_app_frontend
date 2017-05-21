@@ -20,7 +20,7 @@
   </form>
 </div>
 
-<ul ng-repeat="excuse in excuseCtrl.excuses | orderBy : 'occasion.title'">
+<ul ng-repeat="excuse in excuseCtrl.excuses | sorter : criteria : identifier">
     <!-- SHOW -->
     <li>
       <span id="excuseCount"><i class="fa fa-plus" aria-hidden="true" ng-click="excuseCtrl.increaseCount(excuse)"></i>{{excuse.excuse.count}}</span></br>{{excuse.excuse.content}}</br><span id="occasionTag">{{excuse.occasion.title}}</span></br>
