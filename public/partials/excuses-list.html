@@ -28,7 +28,7 @@
       <!-- EDIT OPEN BUTTON -->
       <i ng-if="userIsLoggedIn()" ng-click="excuseCtrl.showEditForm(excuse)" class="fa fa-pencil" aria-hidden="true"></i>
       <!-- DELETE BUTTON -->
-      <i  ng-if="userIsLoggedIn()" ng-click="excuseCtrl.deleteExcuse(excuse.id)" type="submit" class="fa fa-trash" aria-hidden="true"></i>
+      <i  ng-if="userIsLoggedIn()" ng-click="excuseCtrl.deleteExcuse(excuse)" type="submit" class="fa fa-trash" aria-hidden="true"></i>
 
       <div ng-if="excuse.excuse.editForm" id="edit-delete">
         <!-- EDIT FORM -->

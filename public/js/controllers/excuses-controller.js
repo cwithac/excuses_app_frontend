@@ -99,10 +99,13 @@ function($http, $scope) {
     console.log(excuse);
   };
 
-  this.deleteExcuse = function(id){
+  this.deleteExcuse = function(excuse){
     $http({
      method: 'DELETE',
-     url: 'http://localhost:3000/relations/'+ id,
+     url: 'http://localhost:3000/relations/'+ excuse.id,
+     headers: {
+         Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
+     }
     }).then(function(response){
      console.log("Deleted: ", response);
      excuse.excuse.editForm = false;
