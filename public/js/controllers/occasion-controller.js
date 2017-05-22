@@ -3,7 +3,7 @@ function($http, $scope) {
 
   $http({
     method: 'GET',
-    url: 'http://localhost:3000/occasions',
+    url: /*$scope.baseUrl*/ 'http://localhost:3000/' + 'occasions',
   }).then(function(response) {
     console.log(response);
     if (response.data.status === 200) {

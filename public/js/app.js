@@ -2,6 +2,30 @@
 
 var app = angular.module('excuses-app', []);
 
+app.filter('sorter', function() {
+  return function(items, criteria, identifier) {
+    if (identifier === 'user') {
+      userItems = [];
+      for (var i = 0; i < items.length; i++) {
+        if (criteria === items[i].excuse.user_id) {
+          userItems.push(items[i]);
+        }
+      }
+      return userItems;
+    } else if (identifier === 'occasion'){
+      occasionItems = [];
+      for (var i = 0; i < items.length; i++) {
+        if (criteria === items[i].occasion.title) {
+          occasionItems.push(items[i]);
+        }
+      }
+      return occasionItems;
+    } else {
+      return items;
+    }
+  };
+});
+
 app.controller('mainController', ['$http', '$scope', function($http, $scope){
   this.title = "The Perfect Excuse"
 
@@ -14,13 +38,21 @@ app.controller('mainController', ['$http', '$scope', function($http, $scope){
 
   // scope variable holding occasions
   $scope.occasions = [];
-  
+
+  // declaring scope vars needed to toggle criteria for filter
+  $scope.criteria;
+  $scope.identifier;
+
+  $scope.toggleSorter = function(criteria, identifier) {
+    $scope.criteria = criteria;
+    $scope.identifier = identifier;
+  };
 
   // this is a function that checks if a user is logged in, inject scope to your
   // controllers and you should be able to use this variable anywhere
   $scope.userIsLoggedIn = function() {
-    var token = JSON.parse(localStorage.getItem('token'));
-    if(token) {
+    var jwt = localStorage.getItem('token');
+    if(jwt !== 'undefined' && jwt !== undefined && jwt !== null) {
       console.log('The user is logged in.');
       $scope.userData.username = JSON.parse(localStorage.getItem('username'));
       $scope.userData.id = JSON.parse(localStorage.getItem('user_id'));
