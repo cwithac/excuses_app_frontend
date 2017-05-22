@@ -40,7 +40,7 @@ function($http, $scope, userFilter) {
       console.log('inside if');
       $http({
         method: 'POST',
-        url: $scope.baseUrl,
+        url: $scope.baseUrl + 'excuses',
         headers: {
           Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
         },
