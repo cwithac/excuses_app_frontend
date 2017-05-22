@@ -12,7 +12,7 @@ function($http, $scope, userFilter) {
   this.getExcuses = function() {
     $http({
       method: 'GET',
-      url: /*$scope.baseUrl*/ 'http://localhost:3000/' + 'relations',
+      url: $scope.baseUrl + 'relations',
     }).then(function(response){
       console.log('all relations', response);
       this.excuses = response.data;
@@ -40,7 +40,7 @@ function($http, $scope, userFilter) {
       console.log('inside if');
       $http({
         method: 'POST',
-        url: 'http://localhost:3000/excuses',
+        url: $scope.baseUrl + 'excuses',
         headers: {
           Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
         },
@@ -78,18 +78,14 @@ function($http, $scope, userFilter) {
   this.updateExcuse = function(excuse) {
     $http({
       method: 'PUT',
-      url: 'http://localhost:3000/excuses/' + excuse.id,
+      url: $scope.baseUrl + 'excuses/' + excuse.id,
       headers: {
           Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
         },
       data: {
         excuse: {
-          content: excuse.content,
-          // user_id: $scope.userData.id
+          content: excuse.content
         },
-        // user: {
-        //   id: $scope.userData.id
-        // }
       }
     }).then(function(response){
       console.log('inside promise');
@@ -102,7 +98,7 @@ function($http, $scope, userFilter) {
   this.deleteExcuse = function(excuse){
     $http({
      method: 'DELETE',
-     url: 'http://localhost:3000/relations/'+ excuse.id,
+     url: $scope.baseUrl + 'relations/' + excuse.id,
      headers: {
          Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
      }
@@ -120,7 +116,7 @@ function($http, $scope, userFilter) {
     console.log('excuse', excuse);
     $http({
       method: 'PATCH',
-      url: 'http://localhost:3000/excuses/' + excuse.excuse_id + '/upvote',
+      url: $scope.baseUrl + 'excuses/'+ excuse.excuse_id + '/upvote',
       data: {
         excuse: {
           count: excuse.excuse.count
