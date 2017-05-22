@@ -26,7 +26,7 @@
 <ul ng-repeat="excuse in excuses | sorter : criteria : identifier">
     <!-- SHOW -->
     <li>
-      {{excuse.excuse.content}}</br>
+      <span class="content">{{excuse.excuse.content}}</span></br>
       <span id="excuseCount"><i class="fa fa-thumbs-up" aria-hidden="true" ng-click="excuseCtrl.increaseCount(excuse)"></i>{{excuse.excuse.count}}</span></br>
       <span id="occasionTag">{{excuse.occasion.title}}</span></br>
 
