@@ -41,7 +41,7 @@ app.controller('mainController', ['$http', '$scope', function($http, $scope){
 
   // this is the url for our backend, inject scope to your controllers and
   // you should be able to use this variable anywhere
-  $scope.baseUrl = /*'https://perfect-excuse.herokuapp.com/'*/ 'http://localhost:3000/'
+  $scope.baseUrl = 'https://perfect-excuse.herokuapp.com/' /*'http://localhost:3000/'*/
 
   // scope variable holding userData, available to all controllers
   $scope.userData = {};
