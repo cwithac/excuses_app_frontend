@@ -41,13 +41,32 @@ app.controller('mainController', ['$http', '$scope', function($http, $scope){
 
   // this is the url for our backend, inject scope to your controllers and
   // you should be able to use this variable anywhere
-  $scope.baseUrl = 'https://perfect-excuse.herokuapp.com/' /*'http://localhost:3000/'*/
+  $scope.baseUrl = /*'https://perfect-excuse.herokuapp.com/'*/ 'http://localhost:3000/'
 
   // scope variable holding userData, available to all controllers
   $scope.userData = {};
 
   // scope variable holding occasions
   $scope.occasions = [];
+
+  // scope variable holding relations
+  $scope.excuses = [];
+
+  $scope.showButtons = function() {
+    var currentUser = $scope.userData.id;
+    var excuseList = $scope.excuses;
+    console.log(excuseList);
+      for (var i = 0; i < excuseList.length; i++) {
+        if (currentUser === excuseList[i].excuse.user_id) {
+          excuseList[i].excuse.editButton = true;
+          excuseList[i].excuse.deleteButton = true;
+      } else {
+          console.log('else statement');
+          excuseList[i].excuse.editButton = false;
+          excuseList[i].excuse.deleteButton = false;
+      }
+    };
+  };
 
   // declaring scope vars needed to toggle criteria for filter
   $scope.criteria;
@@ -66,6 +85,7 @@ app.controller('mainController', ['$http', '$scope', function($http, $scope){
       console.log('The user is logged in.');
       $scope.userData.username = JSON.parse(localStorage.getItem('username'));
       $scope.userData.id = JSON.parse(localStorage.getItem('user_id'));
+      $scope.showButtons();
       return true;
     } else {
       $scope.userData = {};

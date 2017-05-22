@@ -1,4 +1,7 @@
 <h2 class="occasion-tag">excuses</h2></br>
+
+<!-- <button ng-click="excuseCtrl.showButtons()">NGCLICK</button> -->
+
 <!-- ADD EDIT -->
 <div id="add-edit">
   <h6 ng-if="userIsLoggedIn()" ng-click="excuseCtrl.showAddForm()"><i class="fa fa-plus-square" aria-hidden="true"></i> Add an Excuse</h6>
@@ -20,15 +23,15 @@
   </form>
 </div>
 
-<ul ng-repeat="excuse in excuseCtrl.excuses | sorter : criteria : identifier">
+<ul ng-repeat="excuse in excuses | sorter : criteria : identifier">
     <!-- SHOW -->
     <li>
       <span id="excuseCount"><i class="fa fa-plus" aria-hidden="true" ng-click="excuseCtrl.increaseCount(excuse)"></i>{{excuse.excuse.count}}</span></br>{{excuse.excuse.content}}</br><span id="occasionTag">{{excuse.occasion.title}}</span></br>
 
       <!-- EDIT OPEN BUTTON -->
-      <i ng-if="userIsLoggedIn()" ng-click="excuseCtrl.showEditForm(excuse)" class="fa fa-pencil" aria-hidden="true"></i>
+      <i ng-if="userIsLoggedIn(); excuse.excuse.editButton" ng-click="excuseCtrl.showEditForm(excuse)" class="fa fa-pencil" aria-hidden="true"></i>
       <!-- DELETE BUTTON -->
-      <i  ng-if="userIsLoggedIn()" ng-click="excuseCtrl.deleteExcuse(excuse)" type="submit" class="fa fa-trash" aria-hidden="true"></i>
+      <i  ng-if="userIsLoggedIn(); excuse.excuse.deleteButton" ng-click="excuseCtrl.deleteExcuse(excuse)" type="submit" class="fa fa-trash" aria-hidden="true"></i>
 
       <div ng-if="excuse.excuse.editForm" id="edit-delete">
         <!-- EDIT FORM -->

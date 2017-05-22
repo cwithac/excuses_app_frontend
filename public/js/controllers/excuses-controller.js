@@ -1,13 +1,31 @@
 angular.module('excuses-app').controller('excusesController', ['$http', '$scope', 'sorterFilter',
 function($http, $scope, userFilter) {
 
-  this.excuses = [];
+  // this.excuses = [];
   this.formData = {};
   this.occasion = [];
   this.addForm = false;
   // excuse.excuse.editForm = false;
   this.initialCount = 0;
   this.alert = '';
+  this.editButton = false;
+  this.deleteButton = false;
+
+  // this.showButtons = function() {
+  //   var currentUser = $scope.userData.id;
+  //   var excuseList = this.excuses;
+  //   console.log(excuseList);
+  //     for (var i = 0; i < excuseList.length; i++) {
+  //       if (currentUser === excuseList[i].excuse.user_id) {
+  //         excuseList[i].excuse.editButton = true;
+  //         excuseList[i].excuse.deleteButton = true;
+  //     } else {
+  //         console.log('else statement');
+  //         excuseList[i].excuse.editButton = false;
+  //         excuseList[i].excuse.deleteButton = false;
+  //     }
+  //   };
+  // };
 
   this.getExcuses = function() {
     $http({
@@ -15,11 +33,12 @@ function($http, $scope, userFilter) {
       url: $scope.baseUrl + 'relations',
     }).then(function(response){
       console.log('all relations', response);
-      this.excuses = response.data;
-      for (var i = 0; i < this.excuses.length; i++) {
-        this.excuses[i].excuse.editForm = false;
+      $scope.excuses = response.data;
+      for (var i = 0; i < $scope.excuses.length; i++) {
+        $scope.excuses[i].excuse.editForm = false;
       }
-      console.log(this.excuses);
+      console.log($scope.excuses);
+      $scope.showButtons();
     }.bind(this));
   };
 
@@ -126,6 +145,7 @@ function($http, $scope, userFilter) {
       console.log(response.data);
     }.bind(this));
   };
+
 
   this.showAddForm = function() {
     this.addForm = true;
