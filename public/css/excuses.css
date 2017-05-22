@@ -24,11 +24,11 @@
   margin: 0;
 }
 
-#add-edit h6 {
+#add-edit h4 {
   margin: 0;
 }
 
-h6:hover {
+h4:hover {
   color: limegreen;
   cursor: pointer;
 }
