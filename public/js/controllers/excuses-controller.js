@@ -78,7 +78,7 @@ function($http, $scope, userFilter) {
   this.updateExcuse = function(excuse) {
     $http({
       method: 'PUT',
-      url: $scope.baseUrl + excuse.id,
+      url: $scope.baseUrl + 'excuses/' + excuse.id,
       headers: {
           Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
         },
@@ -102,7 +102,7 @@ function($http, $scope, userFilter) {
   this.deleteExcuse = function(excuse){
     $http({
      method: 'DELETE',
-     url: $scope.baseUrl + excuse.id,
+     url: $scope.baseUrl + 'excuses/' + excuse.id,
      headers: {
          Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
      }
