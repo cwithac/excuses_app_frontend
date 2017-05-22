@@ -85,11 +85,11 @@ function($http, $scope, userFilter) {
       data: {
         excuse: {
           content: excuse.content,
-          user_id: $scope.userData.id
+          // user_id: $scope.userData.id
         },
-        user: {
-          id: $scope.userData.id
-        }
+        // user: {
+        //   id: $scope.userData.id
+        // }
       }
     }).then(function(response){
       console.log('inside promise');
