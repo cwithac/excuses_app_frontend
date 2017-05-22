@@ -84,12 +84,8 @@ function($http, $scope, userFilter) {
         },
       data: {
         excuse: {
-          content: excuse.content,
-          // user_id: $scope.userData.id
+          content: excuse.content
         },
-        // user: {
-        //   id: $scope.userData.id
-        // }
       }
     }).then(function(response){
       console.log('inside promise');
@@ -102,7 +98,7 @@ function($http, $scope, userFilter) {
   this.deleteExcuse = function(excuse){
     $http({
      method: 'DELETE',
-     url: $scope.baseUrl + 'excuses/' + excuse.id,
+     url: $scope.baseUrl + 'relations/' + excuse.id,
      headers: {
          Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
      }
