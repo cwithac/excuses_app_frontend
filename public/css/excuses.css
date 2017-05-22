@@ -13,6 +13,10 @@
   width: 75%;
 }
 
+.content {
+  font-size: 1.5em;
+}
+
 #create-excuse label {
   width: 20%;
   display: inline-block;
@@ -24,11 +28,12 @@
   margin: 0;
 }
 
-#add-edit h6 {
+#add-edit h4 {
   margin: 0;
+  font-size: 1.5em;
 }
 
-h6:hover {
+h4:hover {
   color: limegreen;
   cursor: pointer;
 }

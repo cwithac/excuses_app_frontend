@@ -4,7 +4,7 @@
 
 <!-- ADD EDIT -->
 <div id="add-edit">
-  <h6 ng-if="userIsLoggedIn()" ng-click="excuseCtrl.showAddForm()"><i class="fa fa-plus-square" aria-hidden="true"></i> Add an Excuse</h6>
+  <h4 ng-if="userIsLoggedIn()" ng-click="excuseCtrl.showAddForm()"><i class="fa fa-plus-square" aria-hidden="true"></i> Add an Excuse</h4>
   <!-- <h6 ng-click="excuseCtrl.showEditForm()"><i class="fa fa-pencil" aria-hidden="true"></i> Edit an Excuse</h6> -->
 </div>
 <h6>{{excuseCtrl.alert}}</h6>
@@ -26,7 +26,9 @@
 <ul ng-repeat="excuse in excuses | sorter : criteria : identifier">
     <!-- SHOW -->
     <li>
-      <span id="excuseCount"><i class="fa fa-plus" aria-hidden="true" ng-click="excuseCtrl.increaseCount(excuse)"></i>{{excuse.excuse.count}}</span></br>{{excuse.excuse.content}}</br><span id="occasionTag">{{excuse.occasion.title}}</span></br>
+      <span class="content">{{excuse.excuse.content}}</span></br>
+      <span id="excuseCount"><i class="fa fa-thumbs-up" aria-hidden="true" ng-click="excuseCtrl.increaseCount(excuse)"></i>{{excuse.excuse.count}}</span></br>
+      <span id="occasionTag">{{excuse.occasion.title}}</span></br>
 
       <!-- EDIT OPEN BUTTON -->
       <i ng-if="userIsLoggedIn(); excuse.excuse.editButton" ng-click="excuseCtrl.showEditForm(excuse)" class="fa fa-pencil" aria-hidden="true"></i>
