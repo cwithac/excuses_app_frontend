@@ -4,11 +4,19 @@ var app = angular.module('excuses-app', []);
 
 app.filter('sorter', function() {
   return function(items, criteria, identifier) {
+    // this will make sure that the excuse that was added last will appear first
+    // wanted to use the reverse method but that would throw a rootscope error
+    // so I am looping instead ...
+    newestFirst = [];
+    for (var i = 0; i < items.length; i++) {
+      newestFirst.unshift(items[i]);
+    }
+
     if (identifier === 'user') {
       userItems = [];
       for (var i = 0; i < items.length; i++) {
         if (criteria === items[i].excuse.user_id) {
-          userItems.push(items[i]);
+          userItems.unshift(items[i]);
         }
       }
       return userItems;
@@ -16,12 +24,14 @@ app.filter('sorter', function() {
       occasionItems = [];
       for (var i = 0; i < items.length; i++) {
         if (criteria === items[i].occasion.title) {
-          occasionItems.push(items[i]);
+          occasionItems.unshift(items[i]);
         }
       }
       return occasionItems;
+    } else if (criteria === 'all') {
+      return newestFirst;
     } else {
-      return items;
+      return newestFirst;
     }
   };
 });
