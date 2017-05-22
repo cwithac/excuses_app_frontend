@@ -1,7 +1,8 @@
 .update-submit, .add-submit {
-  padding: 0;
-  width: 60px;
+  /*padding: 0;
+  /*width: 60px;*/
   /*font-family: 'Julius Sans One', sans-serif;*/
+  font-size: 15em;
 }
 
 .update-submit:hover, .add-submit:hover {
@@ -17,6 +18,32 @@
   font-size: 1.5em;
 }
 
+/*.quote {
+  background-color: #f8f8f8;
+  padding: 1vh 1vw;
+}*/
+
+blockquote {
+  margin-top: -1em;
+  background-color: #f8f8f8;
+  border-left: 2px solid #efefef;
+  padding: 1vh 1vw;
+}
+
+.single-excuse {
+  padding: 2vh 0;
+  border-bottom: 1px dotted #efefef;
+}
+
+.options-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.options-wrapper span {
+  padding: 1vh .5vw;
+}
+
 #create-excuse label {
   width: 20%;
   display: inline-block;
@@ -26,6 +53,8 @@
 
 #add-edit {
   margin: 0;
+  text-align: right;
+  font-family: 'Julius Sans One', sans-serif;
 }
 
 #add-edit h4 {
@@ -41,6 +70,42 @@ h4:hover {
 .glyphicon:hover, .fa:hover {
   color: limegreen;
   cursor: pointer;
+}
+
+.edit-delete {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+}
+
+.edit-delete form {
+  width: 70%;
+}
+
+.edit-delete input[type="text"] {
+  font-size: 1.2em;
+  border: 1px solid lightgrey;
+}
+
+.edit-delete input[type='submit'] {
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  border: 1px solid black;
+  font-size: 1.2em;
+}
+
+.edit-delete input[type='submit']:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+  text-shadow: 1px 1px 2px rgba(0,0,0,.3);
+}
+
+.edit-delete input[type='submit']:active {
+  background-color: lightgrey;
+  color: black;
 }
 
 .cancel {

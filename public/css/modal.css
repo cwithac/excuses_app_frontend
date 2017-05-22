@@ -93,7 +93,9 @@
 
 .user-profile {
   padding: 1vh 1vw;
-  background-color: #f8f8f8;
+  /*background-color: #f8f8f8;*/
+  border-top: 2px solid #efefef;
+  border-bottom: 2px solid #efefef;
 }
 
 .user-profile h4 {

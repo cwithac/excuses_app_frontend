@@ -1,11 +1,10 @@
 <!-- SHOWS TOP TEN EXCUSES-->
-<h2 class="occasion-tag comics-box">Top Three Excuses</h2>
-<div class="top-ten">
-                                              <!-- ORDERING BY COUNT THEN LIMIT BY 3 -->
-  <ul ng-repeat="excuse in excuses | orderBy : '-excuse.count' | limitTo: 3 ">
-      <li>
-        "{{excuse.excuse.content}}"
-        </i> - {{excuse.excuse.count}}</span></br>
-      </li>
-  </ul>
+<div class="top-three-container">
+  <h2>Top Three Excuses</h2>
+  <!-- ORDERING BY COUNT THEN LIMIT BY 3 -->
+    <ol class="top-three">
+        <li ng-repeat="excuse in excuses | orderBy : '-excuse.count' | limitTo: 3 ">
+          "{{excuse.excuse.content}}"
+        </li>
+    </ol>
 </div>

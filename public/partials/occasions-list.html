@@ -1,5 +1,5 @@
 <!-- SHOWS ALL OCCASIONS -->
-<h2 class="occasion-tag">occasion</h2>
-<ul ng-repeat="occasion in occasions">
-  <li class="occasions-list" ng-click="toggleSorter(occasion.title, 'occasion');">{{occasion.title}}</li>
+<ul class="occasions-list">
+  <li ng-repeat="occasion in occasions" class="occasion-tag" ng-click="toggleSorter(occasion.title, 'occasion');">{{occasion.title}} | </li>
+  <li class="occasion-tag" ng-click="toggleSorter('all');">show all</li>
 </ul>

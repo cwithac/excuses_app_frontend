@@ -2,16 +2,21 @@
 @import url('https://fonts.googleapis.com/css?family=Bangers');
 @import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Khula:300');
+@import url('https://fonts.googleapis.com/css?family=Limelight');
+
+
 
 * {
-box-sizing: border-box;
-/*border: 1px dotted black;*/
+  box-sizing: border-box;
+  /*border: 1px dotted black;*/
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+  font-family: 'Khula', sans-serif;
 }
 
 nav {
@@ -19,16 +24,20 @@ nav {
   flex-flow: row nowrap;
   justify-content: flex-end;
   align-content: center;
-  background-color: black;
-  color: white;
+  /*background-color: black;*/
   padding: 2vh 2vw;
+  /*border-bottom: 2px solid #efefef;*/
+  /*background-color: rgb(171, 222, 249);*/
 }
 
 nav a {
-  color: white;
+  color: rgb(251, 248, 237);
+  color: black;
   text-decoration: none;
   font-family: 'Julius Sans One', sans-serif;
   padding: 0 2vw;
+  font-size: 1.5em;
+  border-top: 1px solid rgb(256,41,123);
 }
 
 nav a:hover {
@@ -38,61 +47,87 @@ nav a:hover {
 
 header {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-content: center;
-  padding: 10px;
-  background-color: limegreen;
+  /*background-color: rgb(251, 248, 237);*/
+  border-bottom: 2px solid #efefef;
+  background-color: #f8f8f8;
+  /*border: 1px dotted black;*/
 }
 
 header h1 {
-  width: 50%;
   text-align: center;
   /*font-family: 'Bangers', cursive;*/
   font-family: 'Julius Sans One', sans-serif;
+  font-family: 'Limelight', cursive;
+  font-size: 5.5vw;
+  color: rgb(251, 248, 237);
+  /*text-shadow: 1px 1px 2px black;*/
+  color: rgb(93,39,59);
+  /*color: black;*/
 }
 
 h2 {
   font-family: 'Julius Sans One', sans-serif;
+  font-size: 2.2em;
+  text-align: center;
 }
 
-li {
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
   list-style: none;
 }
 
-/*
-ul {
-  padding-left: 0;
-}*/
-
-.header-img {
-  width: 50%;
+.header-left {
+  width: 33%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.header-img img{
-  height: 100%;
-  display: block;
+.header-right {
+  width: 67%;
+}
+
+.header-left img{
+  border-bottom-right-radius: 60%;
+  width: 100%;
 }
 
 .container {
   display: flex;
   flex-flow: row wrap;
+  padding: 2vh 2vw;
 }
 
 .excuses {
   width: 60%;
+  padding: 1vh 5vw;
 }
 
 .occasions {
   width: 40%;
+  padding: 1vh 1vw;
 }
 
-.occasion-tag {
-  display: inline-block;
-  font-family: 'Julius Sans One', sans-serif;
+.top-three-container {
+  border-top: 2px solid #efefef;
+  background-color: #f8f8f8;
+  padding: 1vh 0;
+}
+
+.top-three {
+  font-size: 1.25em;
+  padding: 0 5vw;
+}
+
+.top-three li {
+  padding: 1vh 0;
 }
 
 @media (max-width: 600px) {
