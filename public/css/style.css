@@ -22,7 +22,7 @@ body {
 nav {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-end;
+  justify-content: center;
   align-content: center;
   /*background-color: black;*/
   padding: 2vh 2vw;
@@ -37,7 +37,8 @@ nav a {
   font-family: 'Julius Sans One', sans-serif;
   padding: 0 2vw;
   font-size: 1.5em;
-  border-top: 1px solid rgb(256,41,123);
+  /*border-top: 1px solid rgb(256,41,123);*/
+  border-top: 1px solid black;
 }
 
 nav a:hover {
@@ -61,11 +62,13 @@ header h1 {
   /*font-family: 'Bangers', cursive;*/
   font-family: 'Julius Sans One', sans-serif;
   font-family: 'Limelight', cursive;
-  font-size: 5.5vw;
+  font-size: 6vw;
   color: rgb(251, 248, 237);
-  /*text-shadow: 1px 1px 2px black;*/
+  text-shadow: 1px 1px 2px black;
   color: rgb(93,39,59);
   /*color: black;*/
+  color: lightblue;
+  height: 15vh;
 }
 
 h2 {
@@ -88,6 +91,11 @@ ul li {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url('/images/girl-covering-mouth-svg-by-Vexels.svg');
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-color: lightblue;
 }
 
 .header-right {
@@ -95,8 +103,9 @@ ul li {
 }
 
 .header-left img{
+  display: none;
   border-bottom-right-radius: 60%;
-  width: 100%;
+  width: 50%;
 }
 
 .container {

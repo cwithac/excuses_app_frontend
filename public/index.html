@@ -39,9 +39,6 @@
   </head>
   <body ng-controller="mainController as ctrl">
     <header>
-      <div class="header-left">
-        <img src="/images/Illustration woman bubble HQ 003-01.jpg" alt="Thoughts">
-      </div>
       <div class="header-right">
         <h1>{{ctrl.title}}</h1>
         <nav>
@@ -49,6 +46,9 @@
           <a href="#" id="log-in-link" ng-hide="userIsLoggedIn()">Log in</a>
           <logout-form ng-show="userIsLoggedIn()"></logout-form>
         </nav>
+      </div>
+      <div class="header-left">
+        <img src="/images/girl-covering-mouth-svg-by-Vexels.svg" alt="Thoughts">
       </div>
     </header>
     <div class="container">
