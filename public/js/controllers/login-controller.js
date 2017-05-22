@@ -103,7 +103,7 @@ function($http, $scope) {
   // this function will make a sign up request when called
   this.signUp = function(signUpData) {
     this.msg = '';
-    if (signUpData.password.trim() >= 6 && signUpData.password === signUpData.confirmPassword) {
+    if (signUpData.password === signUpData.confirmPassword) {
       $http({
         method: 'POST',
         url: $scope.baseUrl + 'users',
