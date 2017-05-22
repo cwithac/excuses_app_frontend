@@ -1,7 +1,7 @@
 <section class="user-profile">
   <h4>Hello {{userData.username}}! Would you like to ...</h4>
   <ul>
-    <li ng-click="toggleSorter(userData.id, 'user');">
+    <li ng-click="toggleSorter(userData.id, 'user'); showButtons();">
       <i class="fa fa-eye fa-2x" aria-hidden="true"></i>
       <a href="#">show your excuses</a>
     </li>
