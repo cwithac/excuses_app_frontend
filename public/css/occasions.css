@@ -1,28 +1,4 @@
-
-@import url('http://fonts.googleapis.com/css?family=Bangers');
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
-
-
-.comics-box{
-  transform: rotate(-1deg);
-  margin:15px;
-  padding:0 5px;
-  /*float:right;*/
-  background:#ddd;
-  border:1px solid #222;
-  box-shadow:3px 3px 0 #222;
-  font-family: 'Permanent Marker', cursive;
-}
-
-.top-ten{
-  background: #ddd;
-  border:1px solid #222;
-  box-shadow:3px 3px 0 #222;
-  font-family: 'Bangers', cursive;
-  margin-left: 5px;
-}
-
-.top-excuses{
+.occasions-list {
+  cursor: pointer;
   display: inline-block;
-  font-family: 'Bangers', cursive;
 }
