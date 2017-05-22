@@ -85,11 +85,11 @@ function($http, $scope, userFilter) {
       data: {
         excuse: {
           content: excuse.content,
-          user_id: $scope.userData.id
+          // user_id: $scope.userData.id
         },
-        user: {
-          id: $scope.userData.id
-        }
+        // user: {
+        //   id: $scope.userData.id
+        // }
       }
     }).then(function(response){
       console.log('inside promise');
@@ -120,7 +120,7 @@ function($http, $scope, userFilter) {
     console.log('excuse', excuse);
     $http({
       method: 'PATCH',
-      url: 'http://localhost:3000/excuses/' + excuse.excuse_id,
+      url: 'http://localhost:3000/excuses/' + excuse.excuse_id + '/upvote',
       data: {
         excuse: {
           count: excuse.excuse.count

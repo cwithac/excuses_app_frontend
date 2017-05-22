@@ -1,5 +1,5 @@
 <!-- SHOWS ALL OCCASIONS -->
 <h2 class="occasion-tag comics-box">occasion</h2>
 <ul ng-repeat="occasion in occasions">
-  <li>{{occasion.title}}</li>
+  <li ng-click="toggleSorter(occasion.title, 'occasion');">{{occasion.title}}</li>
 </ul>
