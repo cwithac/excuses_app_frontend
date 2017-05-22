@@ -120,7 +120,7 @@ function($http, $scope, userFilter) {
     console.log('excuse', excuse);
     $http({
       method: 'PATCH',
-      url: 'http://localhost:3000/excuses/' + excuse.excuse_id,
+      url: 'http://localhost:3000/excuses/' + excuse.excuse_id + '/upvote',
       data: {
         excuse: {
           count: excuse.excuse.count
