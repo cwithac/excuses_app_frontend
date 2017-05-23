@@ -38,7 +38,7 @@ nav a {
 }
 
 nav a:hover {
-  color: limegreen;
+  color: rgb(256,41,123);
   text-decoration: none;
 }
 

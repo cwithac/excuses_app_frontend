@@ -6,7 +6,7 @@
 }
 
 .update-submit:hover, .add-submit:hover {
-  color: limegreen;
+  color: rgb(256,41,123);
   cursor: pointer;
 }
 
@@ -63,12 +63,12 @@ blockquote {
 }
 
 h4:hover {
-  color: limegreen;
+  color: rgb(256,41,123);
   cursor: pointer;
 }
 
 .glyphicon:hover, .fa:hover {
-  color: limegreen;
+  color: rgb(256,41,123);
   cursor: pointer;
 }
 
