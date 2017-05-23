@@ -1,4 +1,4 @@
-@media (max-width: 768px) /*and (orientation: portrait)*/ {
+@media (max-width: 768px) {
 
   /*header*/
 
@@ -56,6 +56,84 @@
     margin: 1vh 1vw;
   }
 
+  #create-excuse form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #create-excuse input {
+    margin: 2vh 0;
+    padding: 1vh 1vw;
+  }
+
+  #create-excuse input[type="text"] {
+    border: 1px solid lightgrey;
+  }
+
+  #create-excuse select {
+    color: black;
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+  }
+
+  #create-excuse input[type="submit"] {
+    font-size: 1.5em;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+  }
+
+  #create-excuse input[type="submit"]:active {
+    font-size: 1.5em;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
+
+  #create-excuse div {
+    align-self: flex-end;
+  }
+
+  .edit-delete {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .edit-delete form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .edit-delete input {
+    margin: 2vh 0;
+    padding: 1vh 1vw;
+  }
+
+  .edit-delete input[type="text"] {
+    border: 1px solid lightgrey;
+    width: 100%;
+  }
+
+  .edit-delete input[type="submit"] {
+    font-size: 1.5em;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+  }
+
+  .edit-delete input[type="submit"]:active {
+    font-size: 1.5em;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
+
+  .edit-delete div {
+    align-self: flex-end;
+  }
+
   /*occasions*/
   .occasions {
     width: 100%;
@@ -100,4 +178,10 @@
     font-size: 1.1em;
     padding: 0 10vw;
   }
+}
+
+@media (max-width: 768px) /*and (orientation: portrait)*/ {
+    header h1 {
+      font-size: 6vw;
+    }
 }
