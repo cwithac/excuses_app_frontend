@@ -93,13 +93,13 @@
 
 .user-profile {
   padding: 1vh 1vw;
-  /*background-color: #f8f8f8;*/
   border-top: 2px solid #efefef;
   border-bottom: 2px solid #efefef;
+  font-size: 1.2em;
 }
 
-.user-profile h4 {
-  font-size: 1.2em;
+.user-profile h3 {
+  font-size: 1.4em;
 }
 
 .user-profile ul {
@@ -114,13 +114,19 @@
   vertical-align: middle;
 }
 
-.user-profile ul li a {
-  padding-left: 2vw;
-  color: black;
+.user-profile ul li span {
+  padding-left: 1vw;
+
 }
 
-.user-profile ul li a:hover {
-  color: #808080;
+.user-profile ul li:hover {
+  /*color: rgb(256,41,123);*/
+  transition: .4s;
+}
+
+.user-profile .fa:hover {
+  color: black;
+  cursor: default;
 }
 
 @media (max-width: 768px) {
