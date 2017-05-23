@@ -3,7 +3,7 @@
   /*header*/
 
   header h1 {
-    font-size: 5vh;
+    font-size: 10vw;
   }
 
   .header-left {
@@ -146,8 +146,7 @@
   /*modals */
   .modal {
     width: 95%;
-    font-size: 1em;
-    max-height: 95vh;
+    font-size: 1.1em;
   }
 
   .modal label {
@@ -180,8 +179,15 @@
   }
 }
 
-@media (max-width: 768px) /*and (orientation: portrait)*/ {
+@media (max-width: 768px) and (orientation: landscape) {
     header h1 {
       font-size: 6vw;
+    }
+
+    .modal {
+      position: absolute;
+      top: 50%;
+      left: 2.5%;
+      transform: none;
     }
 }
