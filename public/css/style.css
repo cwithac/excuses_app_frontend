@@ -57,7 +57,6 @@ header h1 {
   font-size: 6vw;
   text-shadow: 1px 1px 2px black;
   color: lightblue;
-  height: 15vh;
 }
 
 h2 {
@@ -126,14 +125,4 @@ ul li {
 
 .top-three li {
   padding: 1vh 0;
-}
-
-@media (max-width: 600px) {
-  .excuses {
-    width: 100%
-  }
-
-  .occasions {
-    width: 100%;
-  }
 }

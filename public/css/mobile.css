@@ -1,0 +1,103 @@
+@media (max-width: 768px) /*and (orientation: portrait)*/ {
+
+  /*header*/
+
+  header h1 {
+    font-size: 5vh;
+  }
+
+  .header-left {
+    background-position: center;
+    background-size: contain;
+  }
+
+  nav a {
+  font-size: 1.1em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  /*excuses*/
+  .excuses {
+    width: 100%
+  }
+
+  .content {
+    font-size: 1.2em;
+  }
+
+  .quote i {
+    font-size: 1.5em;
+  }
+
+  .options-wrapper {
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1em;
+    flex-flow: row wrap;
+  }
+
+  .options-wrapper i {
+    font-size: 1.3em;
+    vertical-align: middle;
+  }
+
+  #add-edit h4 {
+    margin: 0;
+    font-size: 1.2em;
+  }
+
+  .excuse input {
+    display: block;
+    margin: auto;
+    font-size: .8em;
+    margin: 1vh 1vw;
+  }
+
+  /*occasions*/
+  .occasions {
+    width: 100%;
+  }
+
+  .occasion-tag {
+    font-size: 1.2em;
+  }
+
+  /*modals */
+  .modal {
+    width: 95%;
+    font-size: 1em;
+    max-height: 95vh;
+  }
+
+  .modal label {
+    width: 90%;
+    display: block;
+    margin: auto;
+    margin: 1vh 1vw;
+    font-size: .9em;
+  }
+
+  .modal input {
+    display: block;
+    margin: auto;
+    width: 90%;
+    font-size: .8em;
+    margin: 1vh 1vw;
+  }
+
+  /*user profile box*/
+
+  .user-profile h3 {
+    font-size: 1.1em;
+  }
+
+  /*top three*/
+
+  .top-three {
+    font-size: 1.1em;
+    padding: 0 10vw;
+  }
+}

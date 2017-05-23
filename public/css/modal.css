@@ -18,8 +18,6 @@
 }
 
 .modal legend {
-  background-color: black;
-  color: white;
   padding: .2em;
 }
 
@@ -108,6 +106,7 @@
 
 .user-profile ul li {
   padding: 1vh 1vw;
+  cursor: pointer;
 }
 
 .user-profile ul li i {
@@ -120,41 +119,11 @@
 }
 
 .user-profile ul li:hover {
-  /*color: rgb(256,41,123);*/
+  color: rgb(256,41,123);
   transition: .4s;
 }
 
 .user-profile .fa:hover {
   color: black;
   cursor: default;
-}
-
-@media (max-width: 768px) {
-  .modal {
-    width: 95%;
-    font-size: 1em;
-    max-height: 95vh;
-  }
-
-  .modal label {
-    width: 90%;
-    display: block;
-    margin: auto;
-    margin: 1vh 1vw;
-    font-size: .9em;
-  }
-
-  .modal input {
-    display: block;
-    margin: auto;
-    width: 90%;
-    font-size: .8em;
-    margin: 1vh 1vw;
-  }
-
-  .user-profile ul {
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-  }
 }
