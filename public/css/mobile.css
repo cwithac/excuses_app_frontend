@@ -49,16 +49,10 @@
     font-size: 1.2em;
   }
 
-  .excuse input {
-    display: block;
-    margin: auto;
-    font-size: .8em;
-    margin: 1vh 1vw;
-  }
-
   #create-excuse form {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
 
   #create-excuse input {
@@ -68,9 +62,11 @@
 
   #create-excuse input[type="text"] {
     border: 1px solid lightgrey;
+    width: 100%;
   }
 
   #create-excuse select {
+    width: 100%;
     color: black;
     border: 1px solid lightgrey;
     border-radius: 2px;
