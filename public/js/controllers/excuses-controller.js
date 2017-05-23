@@ -42,9 +42,6 @@ function($http, $scope, userFilter) {
             content: this.formData.content,
             count: this.initialCount,
             occasion: this.formData.occasion,
-          },
-          user: {
-            id: $scope.userData.id
           }
         }
       }).then(function(response){
