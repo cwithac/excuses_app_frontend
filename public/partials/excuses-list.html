@@ -1,19 +1,16 @@
-<!-- <h2>excuses</h2></br> -->
-
-<!-- <button ng-click="excuseCtrl.showButtons()">NGCLICK</button> -->
-
-<!-- ADD EDIT -->
+<!-- ADD EXCUSE OPENER -->
 <div id="add-edit">
   <h4 ng-if="userIsLoggedIn()" ng-click="excuseCtrl.showAddForm()">Add an Excuse <i class="fa fa-plus-square" aria-hidden="true"></i></h4>
-  <!-- <h6 ng-click="excuseCtrl.showEditForm()"><i class="fa fa-pencil" aria-hidden="true"></i> Edit an Excuse</h6> -->
 </div>
-<h6>{{excuseCtrl.alert}}</h6>
+
+<!-- ALERT -->
+<h6 class="alert">{{excuseCtrl.alert}}</h6>
+
 <!-- CREATE FORM -->
 <div ng-if="excuseCtrl.addForm" id="create-excuse">
   <form ng-submit="excuseCtrl.createExcuse()">
     <label for="excuse">excuse: </label>
     <input type="text" ng-model="excuseCtrl.formData.content" placeholder="What's your excuse?"></br>
-    <!-- <input type="text" ng-model="excuseCtrl.formData.count" placeholder="Number of times used?"> -->
     <label for="occasion">occasion: </label>
     <select ng-model="excuseCtrl.formData.occasion">
       <option ng-repeat="occasion in occasions"  value="{{occasion.title}}">{{occasion.title}}</option>
@@ -23,14 +20,19 @@
   </form>
 </div>
 
+<!-- REPEATING -->
+
 <ul ng-repeat="excuse in excuses | sorter : criteria : identifier">
+
     <!-- SHOW -->
     <li class="single-excuse">
       <div class='quote'><i class="fa fa-quote-left fa-2x" aria-hidden="true"></i>
       <blockquote class="content">{{excuse.excuse.content}}</blockquote></div>
       <div class="options-wrapper">
+
         <!-- EDIT OPEN BUTTON -->
         <span><i ng-if="userIsLoggedIn(); excuse.excuse.editButton" ng-click="excuseCtrl.showEditForm(excuse)" class="quote-hover fa fa-pencil fa-lg" aria-hidden="true"></i></span>
+
         <!-- DELETE BUTTON -->
         <span><i ng-if="userIsLoggedIn(); excuse.excuse.deleteButton" ng-click="excuseCtrl.deleteExcuse(excuse)" type="submit" class="quote-hover fa fa-trash fa-lg" aria-hidden="true"></i></span>
         <span id="excuseCount"><i class="quote-hover fa fa-thumbs-up fa-lg" aria-hidden="true" ng-click="excuseCtrl.increaseCount(excuse)"></i>{{excuse.excuse.count}}</span>
@@ -38,11 +40,13 @@
       </div>
 
       <div ng-if="excuse.excuse.editForm" class="edit-delete">
+
         <!-- EDIT FORM -->
         <form ng-submit="excuseCtrl.updateExcuse(excuse.excuse)">
           <input type="text" ng-model="excuse.excuse.content" class="update-input">
           <input type="submit" value="update">
         </form>
+
         <!-- CANCEL CHANGES BUTTON -->
         <div ng-click="excuseCtrl.cancelEditForm(excuse)"><i class="quote-hover fa fa-times fa-lg" aria-hidden="true"><span class="cancel"> cancel</span></i></div>
       </li>

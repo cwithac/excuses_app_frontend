@@ -160,3 +160,8 @@ h4:hover {
 #occasionTag {
   font-family: 'Julius Sans One', sans-serif;
 }
+
+.alert {
+  font-size: 1em;
+  color: rgb(256,41,123);
+}
