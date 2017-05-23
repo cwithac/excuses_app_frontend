@@ -11,22 +11,6 @@ function($http, $scope, userFilter) {
   this.editButton = false;
   this.deleteButton = false;
 
-  // this.showButtons = function() {
-  //   var currentUser = $scope.userData.id;
-  //   var excuseList = this.excuses;
-  //   console.log(excuseList);
-  //     for (var i = 0; i < excuseList.length; i++) {
-  //       if (currentUser === excuseList[i].excuse.user_id) {
-  //         excuseList[i].excuse.editButton = true;
-  //         excuseList[i].excuse.deleteButton = true;
-  //     } else {
-  //         console.log('else statement');
-  //         excuseList[i].excuse.editButton = false;
-  //         excuseList[i].excuse.deleteButton = false;
-  //     }
-  //   };
-  // };
-
   this.getExcuses = function() {
     $http({
       method: 'GET',
@@ -41,16 +25,6 @@ function($http, $scope, userFilter) {
       $scope.showButtons();
     }.bind(this));
   };
-
-  // this.getOccasions = function() {
-  //   $http({
-  //     method: 'GET',
-  //     url: 'http://localhost:3000/occasions',
-  //   }).then(function(response){
-  //     console.log('all occasions', response);
-  //     this.occasion = response.data.occasions;
-  //   }.bind(this));
-  // };
 
   this.createExcuse = function(){
     console.log(this.formData.occasion);
@@ -68,7 +42,6 @@ function($http, $scope, userFilter) {
             content: this.formData.content,
             count: this.initialCount,
             occasion: this.formData.occasion,
-            user_id: $scope.userData.id
           },
           user: {
             id: $scope.userData.id

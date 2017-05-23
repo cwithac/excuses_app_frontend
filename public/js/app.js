@@ -41,7 +41,7 @@ app.controller('mainController', ['$http', '$scope', function($http, $scope){
 
   // this is the url for our backend, inject scope to your controllers and
   // you should be able to use this variable anywhere
-  $scope.baseUrl = /*'https://perfect-excuse.herokuapp.com/'*/ 'http://localhost:3000/' 
+  $scope.baseUrl = /*'https://perfect-excuse.herokuapp.com/'*/ 'http://localhost:3000/'
 
   // scope variable holding userData, available to all controllers
   $scope.userData = {};
@@ -77,6 +77,9 @@ app.controller('mainController', ['$http', '$scope', function($http, $scope){
     $scope.identifier = identifier;
   };
 
+  // currentUser
+  $scope.loggedInUser = false;
+
   // this is a function that checks if a user is logged in, inject scope to your
   // controllers and you should be able to use this variable anywhere
   $scope.userIsLoggedIn = function() {
@@ -85,12 +88,14 @@ app.controller('mainController', ['$http', '$scope', function($http, $scope){
       console.log('The user is logged in.');
       $scope.userData.username = JSON.parse(localStorage.getItem('username'));
       $scope.userData.id = JSON.parse(localStorage.getItem('user_id'));
-      return true;
+      $scope.loggedInUser = true;
     } else {
       $scope.userData = {};
       console.log('The user is NOT logged in.');
-      return false;
+      $scope.loggedInUser = false;
     }
   };
+
+  $scope.userIsLoggedIn();
 
 }]); // mainController END
