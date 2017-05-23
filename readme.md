@@ -10,7 +10,7 @@
 
 _Screwed up?  We've got you covered.  Search through a list of excuses for several occasions and vote the most popular ones to the top.  Log in to create, update and delete your personal excuses and view them in your profile._
 
-**Guest Sign In**:  username: guest | password: 123456
+**Guest Sign In**:  username: _guest_ | password: _123456_
 
 ### Technologies Used
 
@@ -27,8 +27,8 @@ _Screwed up?  We've got you covered.  Search through a list of excuses for sever
 ```
 
 ### Upcoming Features
-+ Checkboxes for creation of excuse (many to many)
-+ User can see a list of their own top 10 excuses
++ Checkboxes for creation of excuse (many to many).
++ User can see a list of their own top excuses.
 + User can see what items they have +1.
 + Additional data visualization for top excuses.
 + Current seed data needs user created and added to excuses.
