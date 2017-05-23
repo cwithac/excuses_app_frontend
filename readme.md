@@ -2,15 +2,15 @@
 
 #### Front End: [Hosted on Heroku](https://find-the-perfect-excuse.herokuapp.com/) + [gitHub Repository](https://github.com/cwithac/excuses_app_frontend)
 
-#### Back End: [Hosted on Heroku](https://perfect-excuse.herokuapp.com/relations) + [gitHub Repository](https://github.com/cwithac/excuses_app_api)
+#### Back End: [Hosted on Heroku](https://perfect-excuse.herokuapp.com) + [gitHub Repository](https://github.com/cwithac/excuses_app_api)
+
+![](http://i.imgur.com/0GolfWd.png)
 
 **ex·cuse** _noun_ /ikˈskyo͞os/ : a reason or explanation put forward to defend or justify a fault or offense
 
 _Screwed up?  We've got you covered.  Search through a list of excuses for several occasions and vote the most popular ones to the top.  Log in to create, update and delete your personal excuses and view them in your profile._
 
-**Guest Sign In**:  username: ### | password: ###
-
-IMAGE
+**Guest Sign In**:  username: guest | password: 123456
 
 ### Technologies Used
 
@@ -28,11 +28,14 @@ IMAGE
 
 ### Upcoming Features
 + Checkboxes for creation of excuse (many to many)
-- User can see a list of their own top 10 excuses
-- Additional data visualization for top excuses.
++ User can see a list of their own top 10 excuses
++ User can see what items they have +1.
++ Additional data visualization for top excuses.
++ Current seed data needs user created and added to excuses.
 
 ### Known Issues
 + Update/Delete buttons appear for created excuses only upon click of 'show your excuses' from profile.  Do not disappear with click of 'show all'.
++ Non-functioning edit feature for password.
 
 ### Resources
 + [Girl covering mouth.svg](https://www.vexels.com/vectors/preview/127806/girl-covering-mouth-svg) | designed by Vexels
