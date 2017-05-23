@@ -21,9 +21,3 @@
   background-color: white;
   box-shadow: 0px 0px 5px 5px white;
 }
-
-@media (max-width: 600px) {
-  .occasion-tag {
-    font-size: 1em;
-  }
-}

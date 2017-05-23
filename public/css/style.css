@@ -127,13 +127,3 @@ ul li {
 .top-three li {
   padding: 1vh 0;
 }
-
-@media (max-width: 600px) {
-  .excuses {
-    width: 100%
-  }
-
-  .occasions {
-    width: 100%;
-  }
-}
