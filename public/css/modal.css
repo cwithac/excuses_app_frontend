@@ -50,6 +50,7 @@
   color: black;
   box-shadow: 2px 2px 4px rgba(0,0,0,.3);
   text-shadow: 1px 1px 2px rgba(0,0,0,.3);
+  cursor: pointer;
 }
 
 .modal input[type='submit']:active {
@@ -67,6 +68,7 @@
 
 .modal .close-btn i:hover {
   color: darkgrey;
+  cursor: pointer;
 }
 
 .modal .close-btn i:active {
@@ -85,6 +87,7 @@
 
 .modal #delete-btn:hover {
   background-color: rgba(255,0,0,1);
+  cursor: pointer;
 }
 
 .modal #delete-btn:active {
@@ -93,11 +96,13 @@
 
 .user-profile {
   padding: 1vh 1vw;
-  background-color: #f8f8f8;
+  border-top: 2px solid #efefef;
+  border-bottom: 2px solid #efefef;
+  font-size: 1.2em;
 }
 
-.user-profile h4 {
-  font-size: 1.2em;
+.user-profile h3 {
+  font-size: 1.4em;
 }
 
 .user-profile ul {
@@ -112,41 +117,17 @@
   vertical-align: middle;
 }
 
-.user-profile ul li a {
-  padding-left: 2vw;
+.user-profile ul li span {
+  padding-left: 1vw;
+
+}
+
+.user-profile ul li:hover {
+  /*color: rgb(256,41,123);*/
+  transition: .4s;
+}
+
+.user-profile .fa:hover {
   color: black;
-}
-
-.user-profile ul li a:hover {
-  color: #808080;
-}
-
-@media (max-width: 768px) {
-  .modal {
-    width: 95%;
-    font-size: 1em;
-    max-height: 95vh;
-  }
-
-  .modal label {
-    width: 90%;
-    display: block;
-    margin: auto;
-    margin: 1vh 1vw;
-    font-size: .9em;
-  }
-
-  .modal input {
-    display: block;
-    margin: auto;
-    width: 90%;
-    font-size: .8em;
-    margin: 1vh 1vw;
-  }
-
-  .user-profile ul {
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-  }
+  cursor: default;
 }

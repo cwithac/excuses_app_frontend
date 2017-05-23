@@ -1,17 +1,13 @@
 <section class="user-profile">
-  <h4>Hello {{userData.username}}! Would you like to ...</h4>
+  <h3>Hello {{userData.username}}! Would you like to ...</h3>
   <ul>
     <li ng-click="toggleSorter(userData.id, 'user'); showButtons();">
       <i class="fa fa-eye fa-2x" aria-hidden="true"></i>
-      <a href="#">show your excuses</a>
+      <span>show your excuses</span>
     </li>
-    <li ng-click="toggleSorter('all');">
-      <i class="fa fa-eye fa-2x" aria-hidden="true"></i>
-      <a href="#">show all excuses</a>
-    </li>
-    <li>
+    <li id="edit-profile-link">
       <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
-      <a href="#" id="edit-profile-link">edit your profile</a>
+      <span>edit your profile</span>
     </li>
   </ul>
 </section>
