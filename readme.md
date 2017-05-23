@@ -4,16 +4,12 @@
 
 #### Back End: [Hosted on Heroku](https://perfect-excuse.herokuapp.com/relations) + [gitHub Repository](https://github.com/cwithac/excuses_app_api)
 
-App Summary Text
+**ex·cuse** _noun_ /ikˈskyo͞os/ : a reason or explanation put forward to defend or justify a fault or offense
+
+_Screwed up?  We've got you covered.  Search through a list of excuses for several occasions and vote the most popular ones to the top.  Log in to create, update and delete your personal excuses and view them in your profile._
 
 **Guest Sign In**:  username: ### | password: ###
 
-IMAGE
-
-### Sub-Header
-IMAGE
-
-### Sub-Header
 IMAGE
 
 ### Technologies Used
@@ -26,18 +22,20 @@ IMAGE
 + Javascript Web Token
 + Express, AngularJS, Node
 + HTML, Javascript
-+ Bootstrap Framework | CSS
++ CSS Responsive Design
 + RESTful Routes (Full: Excuses, Users - Partial: Occasions)
 ```
 
 ### Upcoming Features
-+ ###
++ Checkboxes for creation of excuse (many to many)
+- User can see a list of their own top 10 excuses
+- Additional data visualization for top excuses.
 
 ### Known Issues
-+ ###
++ Update/Delete buttons appear for created excuses only upon click of 'show your excuses' from profile.  Do not disappear with click of 'show all'.
 
 ### Resources
-+ ###
++ [Girl covering mouth.svg](https://www.vexels.com/vectors/preview/127806/girl-covering-mouth-svg) | designed by Vexels
 
 ---
 
@@ -46,7 +44,7 @@ IMAGE
 + [Lenin Yang @ leninyang](https://github.com/leninyang)
 + [Cathleen Wright @ cwithac](https://github.com/cwithac)
 
-*Project Management with [ZenHub](https://www.zenhub.com/)*
+*Project Management with [ZenHub](https://www.zenhub.com/), [Slack](https://slack.com) and [Zoom](https://zoom.us/)*
 
 ---
 
