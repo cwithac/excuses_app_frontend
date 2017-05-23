@@ -44,9 +44,9 @@
       <div class="header-right">
         <h1>{{ctrl.title}}</h1>
         <nav>
-          <a href="#" id="sign-up-link" ng-hide="userIsLoggedIn()">Sign Up</a>
-          <a href="#" id="log-in-link" ng-hide="userIsLoggedIn()">Log in</a>
-          <logout-form ng-show="userIsLoggedIn()"></logout-form>
+          <a href="#" id="sign-up-link" ng-hide="loggedInUser">Sign Up</a>
+          <a href="#" id="log-in-link" ng-hide="loggedInUser">Log in</a>
+          <logout-form ng-show="loggedInUser"></logout-form>
         </nav>
       </div>
       <div class="header-left">
@@ -60,16 +60,16 @@
           <occasions-list></occasions-list>
         </aside>
         <aside>
-          <user-profile ng-if="userIsLoggedIn()"></user-profile>
+          <user-profile ng-if="loggedInUser"></user-profile>
         </aside>
       </section>
       <excuses-list class="excuses"></excuses-list>
     </div>
     <!-- these will be modals, ignore for now :) -->
     <section class=modals>
-      <sign-up-form ng-hide="userIsLoggedIn()"></sign-up-form>
-      <login-form ng-hide="userIsLoggedIn()"></login-form>
-      <edit-profile-form ng-if="userIsLoggedIn()"></edit-profile-form>
+      <sign-up-form ng-hide="loggedInUser"></sign-up-form>
+      <login-form ng-hide="loggedInUser"></login-form>
+      <edit-profile-form ng-if="loggedInUser"></edit-profile-form>
     </section>
   </body>
 </html>

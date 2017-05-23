@@ -82,20 +82,18 @@ function($http, $scope) {
       }
     }).then(
       function(response) {
-        console.log('***** in response ');
-        console.log(response.data);
         if (response.data.status === 200) {
           // saves webtoken to local storage
           localStorage.setItem('token', JSON.stringify(response.data.token))
           localStorage.setItem('username', JSON.stringify(response.data.user.username));
           localStorage.setItem('user_id', JSON.stringify(response.data.user.id));
+          $scope.userIsLoggedIn();
+          $scope.showButtons();
         } else {
           this.msg = 'Sorry, the username and password you provided don\'t match our records.';
         }
       }.bind(this),
       function(error) {
-        console.log('***** in error ');
-        console.log(error);
         this.msg = 'Sorry, something went wrong. Please try again later.';
       }.bind(this));
   };
@@ -164,6 +162,7 @@ function($http, $scope) {
           edited.username = '';
           localStorage.setItem('username', JSON.stringify(response.data.user.username));
           this.msg = 'Thank you, your username has been changed!';
+          $scope.userIsLoggedIn();
         } else if (response.data.status === 422) {
           this.msg = 'Sorry, this username is already taken!';
         } else {
@@ -182,7 +181,7 @@ function($http, $scope) {
   this.editPassword = function(edited) {
     this.msg = '';
     console.log('editing password');
-    if (edited.password.trim() >= 6 && edited.password === edited.confirmPassword) {
+    if (edited.password === edited.confirmPassword) {
       $http({
         method: 'PATCH',
         url: $scope.baseUrl + 'users/' + $scope.userData.id,
