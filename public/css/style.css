@@ -74,6 +74,17 @@ ul li {
   list-style: none;
 }
 
+footer {
+  text-align: center;
+  background-color: #f8f8f8;
+  font-size: 1em;
+}
+
+footer a {
+  color: gray;
+  text-decoration: none;
+}
+
 .header-left {
   width: 33%;
   display: flex;
