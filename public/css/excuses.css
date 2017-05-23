@@ -108,6 +108,51 @@ h4:hover {
   color: black;
 }
 
+#create-excuse {
+  display: flex;
+  flex-direction: row;
+}
+
+#create-excuse form {
+  width: 90%;
+}
+
+#create-excuse select {
+  width: 60%;
+  font-size: 1.2em;
+}
+
+#create-excuse label {
+  font-size: 1.2em;
+  margin-right: 5%;
+}
+
+#create-excuse input[type="text"] {
+  font-size: 1.2em;
+  border: 1px solid lightgrey;
+  width: 60%;
+}
+
+#create-excuse input[type='submit'] {
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  border: 1px solid black;
+  font-size: 1em;
+}
+
+#create-excuse input[type='submit']:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+  text-shadow: 1px 1px 2px rgba(0,0,0,.3);
+}
+
+#create-excuse input[type='submit']:active {
+  background-color: lightgrey;
+  color: black;
+}
+
 .cancel {
   font-family: 'Julius Sans One', sans-serif;
 }
