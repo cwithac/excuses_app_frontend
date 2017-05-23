@@ -90,7 +90,7 @@ function($http, $scope, userFilter) {
       });
     } else {
       console.log('occasion empty');
-      this.alert = "Please try again."
+      this.alert = "Oops!  Looks like you’re missing something.  Please check your input and try again."
     } //END IF
   };
 
