@@ -67,7 +67,7 @@ h4:hover {
   cursor: pointer;
 }
 
-.glyphicon:hover, .fa:hover {
+.quote-hover:hover {
   color: rgb(256,41,123);
   cursor: pointer;
 }
